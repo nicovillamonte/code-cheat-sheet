@@ -6,7 +6,7 @@ La subdivisión de la mimsa no va a ser muy meticulosa, por lenguajes u otras, s
 
 Así y todo, en el nombre de cada ejemplo se va a aclarar el lenguaje y lo que se muestra en cada uno.
 
-# Repositorios para clases de facultad
+# Repositorios para la facultad
 
 ## Algoritmos 2
 
