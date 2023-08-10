@@ -17,6 +17,7 @@ Así y todo, en el nombre de cada ejemplo se va a aclarar el lenguaje y lo que s
 #### Implementación de patrones
 
 - **[Vehiculos en TypeScript](https://github.com/nicovillamonte/eg-vehiculo-ts)**: Ejemplo para conocer la tecnología y adentrarse a los primeros conceptos del lenguaje comparandolo con el ejemplo original de Kotlin. Es una traduccion de lenguaje del _[ejemplo de Vehiculos en Kotlin](https://github.com/uqbar-project/eg-vehiculos-kotlin)_.
+- **[Generics en TypeScript](https://github.com/nicovillamonte/eg-generics-ts)**: Ejemplo de Generics en TypeScript para evitar duplicar código. Es una traduccion de lenguaje del _[ejemplo de Generics en Kotlin](https://github.com/uqbar-project/eg-generics-kotlin)_.
 - **[Alumnos Strategy en TypeScript](https://github.com/nicovillamonte/eg-strategy-alumnos-TS)**: Ejemplo para aplicar y enseñar el patron de diseño Strategy. Es una traduccion de lenguaje del _[ejemplo de Alumnes en Kotlin](https://github.com/uqbar-project/video-strategy-alumnes)_.
 - **[File System Composite en TypeScript](https://github.com/nicovillamonte/eg-composite-archivos-TS)**: Ejemplo para aplicar y enseñar el patron de diseño Composite. Es una traduccion de lenguaje del _[ejemplo de File Sytem Composite en Kotlin](https://github.com/uqbar-project/video-composite-archivos)_.
 - **[Series y Peliculas en TypeScript](https://github.com/nicovillamonte/eg-template-method-series-peliculas-TS)**: Ejemplo para aplicar y enseñar Template Method. Es una traduccion de lenguaje del _[ejemplo de Series y Peliculas en Kotlin](https://github.com/uqbar-project/video-templateMethod-contenidos)_.
@@ -45,6 +46,6 @@ _proximamente..._
 
 Ejemplos iniciales:
 
-- [ ] Traduccion a Typescript de [ejemplo Coleccionables](https://github.com/uqbar-project/eg-generics-kotlin)
 - [ ] Traduccion a Typescript de [ejemplo Monedero](https://github.com/uqbar-project/eg-monedero-kotlin)
 - [ ] Traduccion a Typescript de [ejemplo Seguros](https://github.com/uqbar-project/eg-seguros-kotlin)
+- [ ] Cambiar la configuracion de Jest en todos los proyectos NestJS para que tome bien el coverage con el comando `npm run test:cov`
