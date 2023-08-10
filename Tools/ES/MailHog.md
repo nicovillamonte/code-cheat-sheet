@@ -33,3 +33,9 @@ El cual, si abrimos, podemos ver el mail en varios formatos. _HTML_ es el que re
 Y el _source _que tiene muchos más datos sobre el envío del mail.
 
 ![image](https://github.com/nicovillamonte/lapsa-frontend/assets/64659720/f510c229-195a-4667-85f3-46a184c62835)
+
+### Datos del cheat sheet
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 20/07/2023 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
