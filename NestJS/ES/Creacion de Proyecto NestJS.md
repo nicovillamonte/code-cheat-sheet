@@ -213,6 +213,8 @@ rules: {
 },
 ```
 
+Claramente hay cientos de reglas diferentes para poder modificar y hacer su proyecto más o menos estricto, los invito a que investiguen y puedan crear su propio archivo de configuración de ESLint que, luego, puedan reutilizar en todos sus proyectos. 
+
 ### Configuración del Framework de Testing
 
 En este caso, vamos a dar el ejemplo con Jest, ya que es el framework de testing que viene por defecto en los proyectos de NestJS. Sin embargo, la configuración es muy similar para otros frameworks de testing.
@@ -299,6 +301,10 @@ Claramente modificable, es5 por ejemplo ya es una versión vieja, por lo tanto, 
 }
 ```
 
+## A tener en cuenta
+
+Se pudo ver en este cheat sheet que la creación de un proyecto en NestJS puede ser muy sencilla. Sin embargo, la configuración inicial del mismo termina siendo todo un arte, ya que es una parte muy importante y marcará la diferencia durante el desarrollo del mismo, por lo tanto, es importante que se le dedique tiempo a la configuración inicial del proyecto teniendo una visión a futuro tanto del proyecto como del equipo que lo va a desarrollar para que el mismo sea lo más eficiente posible.
+
 # Resumen
 
 Pasos a seguir para crear un proyecto rápido y eficiente en NestJS (Modificable según las necesidades y el criterio de cada uno) suponiendo que estamos utilizando VS Code como editor de código y Jest como framework de testing:
@@ -327,13 +333,22 @@ rules: {
   'prettier/prettier': ['error', { endOfLine: 'auto' }], // Evita el error: Delete `␍`eslintprettier/prettier error
 },
 ```
-5. Cambiar los comandos del archivo `package.json` a gusto para una mejor experiencia de desarrollo, en este caso podremos cambiar los siguientes:
+5. Cambibar la configuración del Prettier si es necesario.
+```js
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+}
+```
+6. Cambiar los comandos del archivo `package.json` a gusto para una mejor experiencia de desarrollo, en este caso podremos cambiar los siguientes:
 ```js
 "start": "nest start --watch",
 "test" : "jest --detectOpenHandles --verbose --passWithNoTests",
 ```
-6. Borrar los archivos innecesarios que se hayan creado si es que los hay.
-7. En caso de utilizar Jest como framework de testing, se puede cambiar su configuración a gusto en el archivo `package.json` en la sección `jest`.
+7. Borrar los archivos innecesarios que se hayan creado si es que los hay.
+8. En caso de utilizar Jest como framework de testing, se puede cambiar su configuración a gusto en el archivo `package.json` en la sección `jest`.
    1. En caso de querer realizar los tests en los archivos del código como viene por defecto dejarlo como esta.
    2. En caso de querer ubicar los tests en el directorio `test`, fuera de los archivos del código, se debe cambiar la configuración de la siguiente manera:
     ```js
@@ -364,7 +379,7 @@ rules: {
     }
     ```
     Esta configuración permite tener los tests en los directorios tanto como `test` y `src` y que Jest los reconozca y los ejecute, incluyendo la cobertura de los mismos con el comando `npm run test:cov`.
-8. Instalar Swagger y adaptarlo al proyecto si es necesario.
+9. Instalar Swagger y adaptarlo al proyecto si es necesario.
 
 ## TODO
 
@@ -375,7 +390,7 @@ rules: {
   - Herramientas útiles
   - VS Code Extensiones para trabajar con NestJS de una mejor manera
 - Configuracion
-- A tener en cuenta
+- ~~A tener en cuenta~~
 - ~~Resumen~~ (LISTO)
 
 
