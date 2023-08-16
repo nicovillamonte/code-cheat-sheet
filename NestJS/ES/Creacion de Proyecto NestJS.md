@@ -273,7 +273,31 @@ Con esta configuración de Jest podremos tener tests tanto en la carpeta `test` 
 
 ### Configuración de Prettier
 
-----------------------------------------------COMPLETAR...
+Prettier es una herramienta que permite formatear el código fuente de una manera más legible y ordenada. Debe estar en armonía con el archivo de configuración de ESLint para que no haya conflictos entre ambos.
+
+Su archivo en formato json, `.prettierrc`, es en donde se configurarán los parámetros necesarios del formateador.
+
+Según la documentación oficial de Prettier, su configuración básica es la siguiente:
+
+``` js
+{
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+Claramente modificable, es5 por ejemplo ya es una versión vieja, por lo tanto, yo suelo utilizar la siguiente configuración para mis proyectos de NestJS:
+
+``` js
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+}
+```
 
 # Resumen
 
@@ -357,7 +381,7 @@ rules: {
 
 Falta:
 
-- Configuracion de Prettier (Seccion Configuracion)
+- ~~Configuracion de Prettier (Seccion Configuracion)~~
 - Extensiones para VS CODE en un proyecto NestJS (Seccion Extensiones)
 - Swagger (Seccion Herramientas Utiles)
 - Final a link de otro .md que explique la generación con nest g
