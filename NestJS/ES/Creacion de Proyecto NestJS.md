@@ -390,15 +390,28 @@ rules: {
     Esta configuración permite tener los tests en los directorios tanto como `test` y `src` y que Jest los reconozca y los ejecute, incluyendo la cobertura de los mismos con el comando `npm run test:cov`.
 9. Instalar Swagger y adaptarlo al proyecto si es necesario.
 
+# Siguiente paso
+
+- Generación de archivos basados en un esquema en NestJS (Proximamente)
+
+<br><br>
+
+### Datos del cheat sheet
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 20/07/2023 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+
+
 ## TODO
 
 - ~~Pre-requisitos~~ (LISTO)
 - Creacion
   - ~~Comandos y todas sus varianetes u opciones~~ (LISTO)
   - ~~Estructura del proyecto~~ (LISTO)
-  - Herramientas útiles
+  - ~~Herramientas útiles~~
   - VS Code Extensiones para trabajar con NestJS de una mejor manera
-- Configuracion
+- ~~Configuracion~~
 - ~~A tener en cuenta~~
 - ~~Resumen~~ (LISTO)
 
@@ -408,5 +421,5 @@ Falta:
 - ~~Configuracion de Prettier (Seccion Configuracion)~~
 - Extensiones para VS CODE en un proyecto NestJS (Seccion Extensiones)
 - ~~Swagger (Seccion Herramientas Utiles)~~
-- Final a link de otro .md que explique la generación con nest g
-- Firma al final
+- ~~Final a link de otro .md que explique la generación con nest g~~
+- ~~Firma al final~~
