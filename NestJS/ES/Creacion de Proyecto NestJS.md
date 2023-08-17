@@ -102,6 +102,15 @@ En un inicio, el proyecto creado con el comando `nest new` tiene una estructura 
 
 ### Swagger
 
+Es recomendable, si se esta desarrollando un api con NestJS, utilizar Swagger para documentar y probar la misma. Para ello, se deben seguir los pasos de la [documentación oficial de NestJS para añadir y configurar Swagger](https://docs.nestjs.com/openapi/introduction) en el proyecto.
+
+Tanto la instalación como configuración de Swagger es muy sencilla y rápida, por lo que se recomienda realizarla antes de comenzar a desarrollar una api con este framework.
+
+Luego, durante el desarrollo, hay que tener en cuenta cómo se debe utilizar esta herramienta en el código, por lo que se recomienda leer las siguientes secciones de la documentación otorgada anteriormente. Sin embargo, podemos decir que algunos de los decoradores que se suelen usar más frecuentemente con esta herramienta son `@ApiTags()`, `@ApiHeader()`, `@ApiResponse()`, `@ApiProperty()`, [entre otros](https://docs.nestjs.com/openapi/decorators).
+
+
+### Swagger
+
 --.------------ Falta completar ------------.--
 Tiene que mostrar como adaptarlo al proyecto pero linkear a otro md para explicar mas a profundidad
 
@@ -398,6 +407,6 @@ Falta:
 
 - ~~Configuracion de Prettier (Seccion Configuracion)~~
 - Extensiones para VS CODE en un proyecto NestJS (Seccion Extensiones)
-- Swagger (Seccion Herramientas Utiles)
+- ~~Swagger (Seccion Herramientas Utiles)~~
 - Final a link de otro .md que explique la generación con nest g
 - Firma al final
