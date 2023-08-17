@@ -420,6 +420,6 @@ Falta:
 
 - ~~Configuracion de Prettier (Seccion Configuracion)~~
 - Extensiones para VS CODE en un proyecto NestJS (Seccion Extensiones)
-- ~~Swagger (Seccion Herramientas Utiles)~~
+- Swagger (Seccion Herramientas Utiles)
 - ~~Final a link de otro .md que explique la generación con nest g~~
 - ~~Firma al final~~
