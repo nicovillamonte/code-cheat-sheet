@@ -105,11 +105,6 @@ Tanto la instalación como configuración de Swagger es muy sencilla y rápida, 
 Luego, durante el desarrollo, hay que tener en cuenta cómo se debe utilizar esta herramienta en el código, por lo que se recomienda leer las siguientes secciones de la documentación otorgada anteriormente. Sin embargo, podemos decir que algunos de los decoradores que se suelen usar más frecuentemente con esta herramienta son `@ApiTags()`, `@ApiHeader()`, `@ApiResponse()`, `@ApiProperty()`, [entre otros](https://docs.nestjs.com/openapi/decorators).
 
 
-### Swagger
-
---.------------ Falta completar ------------.--
-Tiene que mostrar como adaptarlo al proyecto pero linkear a otro md para explicar mas a profundidad
-
 ## Configuración del Proyecto
 
 Antes de empezar a desarrollar el proyecto, es recomendable configurar algunas cosas para que el proyecto sea más eficiente y para que se pueda trabajar de una manera más cómoda tanto en equipos individuales como en equipos de trabajo.
@@ -128,9 +123,9 @@ En este caso, se va a utilizar VS Code como editor de código. Tenemos dos forma
 
 La otra manera de configurar VS Code es presionar `Ctrl + Shift + P` para abrir el menú de comandos. Luego, se debe buscar la opción `Preferences: Open Workspace Settings` (Esta vez no en formato JSON) y se nos abrirá un menú más visual que contiene la configuración que puede ser modificada de manera más sencilla. En este caso, se debe buscar la opción `Editor: Tab Size` y modificar el valor a 2.
 
-------------------------------AGREGAR FOTO DE LA CONFIGURACIÓN DE VS CODE 
+![image](https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/45989d53-df3d-403f-8579-d62a78351a93)
 
-Ambas formas son válidas. Yo, en lo personal, recomiendo que se acostumbren a realizarlo con el **JSON**, ya que una vez que tienes el JSON ideal para ti, puedes copiarlo y pegarlo en cualquier proyecto que tengas sin tener que configurar todo de nuevo. Además, es más fácil de compartir con otros desarrolladores para que todos puedan tener la misma configuración.
+Ambas formas son válidas. Yo, en lo personal, recomiendo que se acostumbren a realizarlo con el **JSON**, ya que una vez que tienes el JSON ideal para ti, puedes copiarlo y pegarlo en cualquier proyecto que tengas sin tener que configurar todo de nuevo. Además, es más fácil de compartir con otros desarrolladores (omitiendo este archivo en el `.gitignore`) para que todos puedan tener la misma configuración.
 
 ### Configuración de Scripts
 
@@ -390,7 +385,7 @@ rules: {
 
 - Generación de archivos basados en un esquema en NestJS (Proximamente)
 
-<br><br>
+<br>
 
 ### Datos del cheat sheet
 \- Autor: Nicolás Villamonte <br>
