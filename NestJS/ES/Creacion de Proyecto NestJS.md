@@ -1,6 +1,6 @@
 # Creación de un Proyecto NestJS
 
-La creación de un proyecto en el framework de NodeJS, NestJS, es muy sencilla. Sin embargo la misma contiene muchas configuraciones que tenemos que ser capaces de entender para crear un proyecto más eficiente a la hora de trabajar sobre el código. En este documento se explicará como crear un proyecto NestJS y las configuraciones que se pueden realizar para mejorar el mismo. Además, se explicarán algunos tips, extensiones y de más que pueden ser de gran utilidad.
+La creación de un proyecto en el framework de NodeJS, NestJS, es muy sencilla. Sin embargo la misma contiene muchas configuraciones que tenemos que ser capaces de entender para crear un proyecto más eficiente a la hora de trabajar sobre el código. En este documento se explicará como crear un proyecto NestJS y las configuraciones que se pueden realizar para mejorar el mismo. Además, se explicarán algunos tips, configuraciones y de más que pueden ser de gran utilidad.
 
 
 ### Pre-requisitos
@@ -93,10 +93,6 @@ En un inicio, el proyecto creado con el comando `nest new` tiene una estructura 
 - Los archivos **`package.json`** y **`package-lock.json`** son los archivos de configuración de npm. En el archivo `package.json` se encuentran las dependencias del proyecto y en el archivo `package-lock.json` se encuentran las versiones de las dependencias del proyecto.
 - El archivo **`README.md`** es el archivo que se utiliza para mostrar información sobre el proyecto en el repositorio Git. En este archivo se suele colocar información sobre el proyecto, cómo instalarlo, cómo ejecutarlo, cómo contribuir al proyecto, etc.
 - La carpeta **`node_modules`** es la carpeta que se crea al instalar las dependencias del proyecto. En esta carpeta se encuentran todas las dependencias del proyecto.
-
-## Extensiones recomendadas para VS Code
-
-... (Falta completar)
 
 ## Herramientas útiles
 
@@ -321,14 +317,14 @@ Pasos a seguir para crear un proyecto rápido y eficiente en NestJS (Modificable
 1. Ejecutar el comando `nest new <nombre-proyecto> -p npm`
    1. Entrar en la carpeta del proyecto creado con el comando `cd <nombre-proyecto>`
    2. Abrir el editor de código, en este caso VS Code, con el comando `code .`
-2. Activar las extensiones recomendadas en el editor de código.
+2. Activar las extensiones a utilizar en el editor de código para el espacio de trabajo del proyecto.
 3. En VS Code, presionar `Ctrl + Shift + P` y abrir la opción `Prefences: Open Workspace Settings (JSON)` para pegar el siguiente JSON:
 ```js
 {
   "editor.tabSize": 2
 }
 ```
-4. Modificar las reglas en el archivo `.eslintrc.js` para que queden de la siguiente manera:
+1. Modificar las reglas en el archivo `.eslintrc.js` para que queden de la siguiente manera:
 ```js
 rules: {
   '@typescript-eslint/interface-name-prefix': 'off',
@@ -398,28 +394,6 @@ rules: {
 
 ### Datos del cheat sheet
 \- Autor: Nicolás Villamonte <br>
-\- Fecha: 20/07/2023 <br>
+\- Fecha: 18/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
-
-
-## TODO
-
-- ~~Pre-requisitos~~ (LISTO)
-- Creacion
-  - ~~Comandos y todas sus varianetes u opciones~~ (LISTO)
-  - ~~Estructura del proyecto~~ (LISTO)
-  - ~~Herramientas útiles~~
-  - VS Code Extensiones para trabajar con NestJS de una mejor manera
-- ~~Configuracion~~
-- ~~A tener en cuenta~~
-- ~~Resumen~~ (LISTO)
-
-
-Falta:
-
-- ~~Configuracion de Prettier (Seccion Configuracion)~~
-- Extensiones para VS CODE en un proyecto NestJS (Seccion Extensiones)
-- Swagger (Seccion Herramientas Utiles)
-- ~~Final a link de otro .md que explique la generación con nest g~~
-- ~~Firma al final~~
