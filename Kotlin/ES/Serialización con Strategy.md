@@ -20,9 +20,12 @@ Nuestro desafío es encontrar una manera fácil y rápida de serializar y deseri
 
 Imaginemos entonces que tenemos el siguiente diagrama de clases para el strategy de vehículos:
 
-------------- IMAGEN DEL STRATEGY
+<p align="center">
+    <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/ca8dc623-cc65-46e4-a335-031554cffad5" />
+</p>
 
-Como se puede ver, tenemos una interfaz `Vehiculo` que es implementada por las clases `Auto`, `Moto` y `Bicicleta`.
+
+Como se puede ver, tenemos una interfaz `Vehiculo` que es implementada por las clases `Auto`, `Moto` y `Bicicleta`. El ejemplo es muy sencillo y los fines del mismo no son explicar el patrón Strategy, sino explicar como serializar y deserializar en casos en los que se utilice éste patrón u otro que maneje varias tipos de clases que implementan o heredan de otras.
 
 Vamos a tener que crear un DTO (Data Transfer Object) general para todos los vehículos, que contenga todos los campos que se quieren serializar y deserializar, y además, un campo `tipo` que indique el tipo de vehículo que es.
 
@@ -120,6 +123,6 @@ Por lo que esto es solamente la explicación de cómo se puede llegar a realizar
 ### Datos del cheat sheet
 
 \- Autor: Nicolás Villamonte <br>
-\- Fecha: 21/08/2023 <br>
+\- Fecha: 22/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
