@@ -5,8 +5,24 @@ La creación de un proyecto en el framework de NodeJS, NestJS, es muy sencilla. 
 ## Indice
 
 - [Pre-requisitos](#pre-requisites)
-1. Instalación de NestJS
-2. [Resumen](#resumen)
+1. [Instalación de NestJS CLI](#nestjs-instalation)
+2. [Creación del proyecto](#project-creation)
+    1. [Opciones del comando](#command-options)
+3. [Estructura del proyecto](#project-structure)
+4. [Herramientas útiles](#tools)
+    1. [Swagger](#tools-swagger)
+5. [Configuración del Proyecto](#project-configuration)
+    1. [Configuración del editor de código](#editor-config)
+    2. [Configuración de Scripts](#scripts-config)
+    3. [Configuración de ESLint](#eslint-config)
+        1. [Reglas](#eslint-rules)
+    4. [Configuración del Framework de Testing](#test-config)
+    5. [Configuración de Prettier](#prettier-config)
+6. [A tener en cuenta](#tips)
+7. [Resumen](#resumen)
+8. [Siguiente/s paso](#next-step)
+
+- [Datos del cheat sheet](#cheat-sheet-info)
 
 <h3 id="pre-requisites">Pre-requisitos</h3>
 
@@ -21,7 +37,7 @@ node -v
   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/da08dbc2-b428-4f01-ac19-cb9228b82967">
 </p>
 
-## Instalación de NestJS CLI
+<h2 id="nestjs-instalation">Instalación de NestJS CLI</h2>
 
 El primer paso para la creación de un proyecto en NestJS es instalar el CLI (Command Line Interface) de NestJS. Para ello, se debe ejecutar el siguiente comando en la terminal:
 
@@ -38,7 +54,7 @@ nest -v
   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/63f8ce95-dcf0-4497-aa8e-de9e88ae7c5b">
 </p>
 
-## Creación del proyecto
+<h2 id="project-creation">Creación del proyecto</h2>
 
 El comando por defecto para crear un proyecto en NestJS es el siguiente:
 
@@ -54,7 +70,7 @@ nest new mi-proyecto
 
 Este comando creará una carpeta con el nombre del proyecto y dentro de la misma se encontrarán todos los archivos y carpetas necesarios para el funcionamiento del proyecto.
 
-### Opciones del comando
+<h3 id="command-options">Opciones del comando</h3>
 
 En la [documentación oficial del comando `nest new` de NestJS](https://docs.nestjs.com/cli/usages) se pueden encontrar todas las opciones que se pueden utilizar al momento de crear un proyecto. Sin embargo, a continuación se explicarán las más importantes.
 
@@ -65,7 +81,7 @@ En la [documentación oficial del comando `nest new` de NestJS](https://docs.nes
 - **Opción `--strict`**: Esta opción permite que se cree el proyecto con la configuración de TypeScript en modo estricto. Esto es útil cuando se quiere tener una configuración de TypeScript más estricta para evitar errores en el código aplicando mejores prácticas al mismo.
 
 
-## Estructura del proyecto
+<h2 id="project-structure">Estructura del proyecto</h2>
 
 La estructura de un proyecto NestJS creado con el comando `nest new` es la siguiente:
 
@@ -105,9 +121,9 @@ En un inicio, el proyecto creado con el comando `nest new` tiene una estructura 
 - El archivo **`README.md`** es el archivo que se utiliza para mostrar información sobre el proyecto en el repositorio Git. En este archivo se suele colocar información sobre el proyecto, cómo instalarlo, cómo ejecutarlo, cómo contribuir al proyecto, etc.
 - La carpeta **`node_modules`** es la carpeta que se crea al instalar las dependencias del proyecto. En esta carpeta se encuentran todas las dependencias del proyecto.
 
-## Herramientas útiles
+<h2 id="tools">Herramientas útiles</h2>
 
-### Swagger
+<h3 id="tools-swagger">Swagger</h3>
 
 Es recomendable, si se esta desarrollando un api con NestJS, utilizar Swagger para documentar y probar la misma. Para ello, se deben seguir los pasos de la [documentación oficial de NestJS para añadir y configurar Swagger](https://docs.nestjs.com/openapi/introduction) en el proyecto.
 
@@ -116,11 +132,11 @@ Tanto la instalación como configuración de Swagger es muy sencilla y rápida, 
 Luego, durante el desarrollo, hay que tener en cuenta cómo se debe utilizar esta herramienta en el código, por lo que se recomienda leer las siguientes secciones de la documentación otorgada anteriormente. Sin embargo, podemos decir que algunos de los decoradores que se suelen usar más frecuentemente con esta herramienta son `@ApiTags()`, `@ApiHeader()`, `@ApiResponse()`, `@ApiProperty()`, [entre otros](https://docs.nestjs.com/openapi/decorators).
 
 
-## Configuración del Proyecto
+<h2 id="project-configuration">Configuración del Proyecto</h2>
 
 Antes de empezar a desarrollar el proyecto, es recomendable configurar algunas cosas para que el proyecto sea más eficiente y para que se pueda trabajar de una manera más cómoda tanto en equipos individuales como en equipos de trabajo.
 
-### Configuración del editor de código
+<h3 id="editor-config">Configuración del editor de código</h3>
 
 Es importante configurar el editor de código para que se adapte a las necesidades de cada uno. Pues algunas de las configuraciones por default con las que viene nuestro proyecto no son del todo cómodas para todos los desarrolladores. Una de las más comunes suele ser el tamaño de las tabulaciones. Por defecto, el tamaño de las tabulaciones suele ser de 4 espacios. Sin embargo, hay desarrolladores que prefieren que el tamaño de las tabulaciones sea de 2 espacios por su mayor prolijidad, legibilidad y mayor espacio en la pantalla para el código. Sin mencionar que el Prettier por defecto suele formatear el código con tabulaciones de 2 espacios al guardar el archivo, lo que nos arrojará un error de ESLint si no configuramos el editor de código para que tenga el mismo tamaño de tabulaciones que el Prettier o viceversa.
 
@@ -138,7 +154,7 @@ La otra manera de configurar VS Code es presionar `Ctrl + Shift + P` para abrir 
 
 Ambas formas son válidas. Yo, en lo personal, recomiendo que se acostumbren a realizarlo con el **JSON**, ya que una vez que tienes el JSON ideal para ti, puedes copiarlo y pegarlo en cualquier proyecto que tengas sin tener que configurar todo de nuevo. Además, es más fácil de compartir con otros desarrolladores (omitiendo este archivo en el `.gitignore`) para que todos puedan tener la misma configuración.
 
-### Configuración de Scripts
+<h3 id="scripts-config">Configuración de Scripts</h3>
 
 Los Scripts de ejecución son comandos que se pueden ejecutar desde la terminal para realizar tareas específicas. Un tipico ejemplo podría ser el comando `npm start` con el que se suelen ejecutar los proyectos, como también el comando `npm test` para realizar los tests. Estos Scripts son totalmente configurables y se pueden crear nuevos Scripts para realizar tareas específicas.
 
@@ -158,7 +174,7 @@ El primero es el `npm start`, al que siempre le agrego el `--watch` para que el 
 
 Por otro lado, al `npm test` le agrego varias opciones para tener una mejor experiencia de desarrollo. La primera es el `--detectOpenHandles` que nos permite detectar si hay algún proceso que no se ha cerrado correctamente. Esto es muy útil para detectar errores en el código que no se han manejado correctamente. La segunda es el `--verbose` que nos permite ver más información sobre los tests que se están ejecutando. Y la tercera es el `--passWithNoTests` que nos permite que los tests pasen aunque no haya tests escritos. Esto es muy útil para cuando estamos desarrollando y no hemos escrito ningún test aún, ya que nos permite ejecutar el comando `npm test` sin que nos arroje un error.
 
-### Configuración de ESLint
+<h3 id="eslint-config">Configuración de ESLint</h3>
 
 ESLint es una herramienta de linting que permite analizar el código fuente para encontrar errores de sintaxis, errores de estilo, errores de lógica, etc. y así poder corregirlos antes de ejecutar el código. Esto es muy útil para evitar errores en tiempo de ejecución y para mantener un código limpio y ordenado. Sin embargo, a veces la configuración por defecto no se ajusta a nuestras necesidades de desarrollo y puede llegar a un punto de ser muy molesto a la hora de programar. Por eso es que es necesario saber cómo configurar ESLint para que se adapte a nuestras necesidades.
 
@@ -196,7 +212,7 @@ Lo más importante es entender que todo se basa en el parser y en reglas. En est
 
 Podemos ver a simple vista que el ultimo parámetro del JSON es `rules`, el cual es un objeto que contiene todas las reglas que se van a aplicar en el proyecto y en el que nos centraremos la mayor parte del tiempo configurando en un proyecto. Sin embargo, las reglas no se quedan solo en ese objeto, sino que también se pueden configurar en los campos `extends` y `plugins`, que definen conjuntos de reglas predefinidas para el proyecto.
 
-#### Reglas
+<h4 id="eslint-rules">Reglas</h4>
 
 Las reglas son las que nos permiten definir el comportamiento de ESLint en nuestro proyecto. Por ejemplo, si queremos que ESLint nos arroje un error cuando no se utilice alguna variable en nuestro código, podemos configurar la siguiente regla en el objeto `rules`:
 
@@ -226,7 +242,7 @@ rules: {
 
 Claramente hay cientos de reglas diferentes para poder modificar y hacer su proyecto más o menos estricto, los invito a que investiguen y puedan crear su propio archivo de configuración de ESLint que, luego, puedan reutilizar en todos sus proyectos. 
 
-### Configuración del Framework de Testing
+<h3 id="test-config">Configuración del Framework de Testing</h3>
 
 En este caso, vamos a dar el ejemplo con Jest, ya que es el framework de testing que viene por defecto en los proyectos de NestJS. Sin embargo, la configuración es muy similar para otros frameworks de testing.
 
@@ -284,7 +300,7 @@ Esta configuración podríamos dejarla tal cual si se van a realizar los tests d
 
 Con esta configuración de Jest podremos tener tests tanto en la carpeta `test` como en la carpeta `src` y que Jest los tome a todos. Además, podremos calcular la cobertura de los tests de manera correcta con el comando `npm run test:cov`, sin que molesten archivos cuyo testeo se ve innecesario en la mayoría de los casos como los son `main.ts` y todos los archivos `.module` que lo único que realizan es configurar los diferentes módulos del proyecto.
 
-### Configuración de Prettier
+<h3 id="prettier-config">Configuración de Prettier</h3>
 
 Prettier es una herramienta que permite formatear el código fuente de una manera más legible y ordenada. Debe estar en armonía con el archivo de configuración de ESLint para que no haya conflictos entre ambos.
 
@@ -312,11 +328,10 @@ Claramente modificable, es5 por ejemplo ya es una versión vieja, por lo tanto, 
 }
 ```
 
-## A tener en cuenta
+<h2 id="tips">A tener en cuenta</h2>
 
 Se pudo ver en este cheat sheet que la creación de un proyecto en NestJS puede ser muy sencilla. Sin embargo, la configuración inicial del mismo termina siendo todo un arte, ya que es una parte muy importante y marcará la diferencia durante el desarrollo del mismo, por lo tanto, es importante que se le dedique tiempo a la configuración inicial del proyecto teniendo una visión a futuro tanto del proyecto como del equipo que lo va a desarrollar para que el mismo sea lo más eficiente posible.
 
-# Resumen
 <h1 id="resumen">Resumen</h1>
 
 Pasos a seguir para crear un proyecto rápido y eficiente en NestJS (Modificable según las necesidades y el criterio de cada uno) suponiendo que estamos utilizando VS Code como editor de código y Jest como framework de testing:
@@ -393,14 +408,15 @@ rules: {
     Esta configuración permite tener los tests en los directorios tanto como `test` y `src` y que Jest los reconozca y los ejecute, incluyendo la cobertura de los mismos con el comando `npm run test:cov`.
 9. Instalar Swagger y adaptarlo al proyecto si es necesario.
 
-# Siguiente paso
+<h1 id="next-step">Siguiente/s paso</h1>
 
 - Generación de archivos basados en un esquema en NestJS (Proximamente)
 
 <br>
 
-### Datos del cheat sheet
+<h3 id="cheat-sheet-info">Datos del cheat sheet</h3>
+
 \- Autor: Nicolás Villamonte <br>
-\- Fecha: 18/08/2023 <br>
+\- Fecha: 21/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
