@@ -2,8 +2,13 @@
 
 La creación de un proyecto en el framework de NodeJS, NestJS, es muy sencilla. Sin embargo la misma contiene muchas configuraciones que tenemos que ser capaces de entender para crear un proyecto más eficiente a la hora de trabajar sobre el código. En este documento se explicará como crear un proyecto NestJS y las configuraciones que se pueden realizar para mejorar el mismo. Además, se explicarán algunos tips, configuraciones y de más que pueden ser de gran utilidad.
 
+## Indice
 
-### Pre-requisitos
+- [Pre-requisitos](#pre-requisites)
+1. Instalación de NestJS
+2. [Resumen](#resumen)
+
+<h3 id="pre-requisites">Pre-requisitos</h3>
 
 Como pre-requisito para poder crear un proyecto NestJS, es necesario tener instalado NodeJS y NPM. Para ello, se puede descargar desde su [página oficial](https://nodejs.org/es/) la versión LTS (Long Term Support) que es la recomendada para la mayoría de los usuarios.
 
@@ -12,6 +17,9 @@ Una vez instalado NodeJS, se puede verificar que se haya instalado correctamente
 ```bash
 node -v
 ```
+<p align="center">
+  <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/da08dbc2-b428-4f01-ac19-cb9228b82967">
+</p>
 
 ## Instalación de NestJS CLI
 
@@ -26,6 +34,9 @@ Esto se debe realizar por única vez en el ordenador que se va a utilizar NestJS
 ```bash
 nest -v
 ```
+<p align="center">
+  <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/63f8ce95-dcf0-4497-aa8e-de9e88ae7c5b">
+</p>
 
 ## Creación del proyecto
 
@@ -306,6 +317,7 @@ Claramente modificable, es5 por ejemplo ya es una versión vieja, por lo tanto, 
 Se pudo ver en este cheat sheet que la creación de un proyecto en NestJS puede ser muy sencilla. Sin embargo, la configuración inicial del mismo termina siendo todo un arte, ya que es una parte muy importante y marcará la diferencia durante el desarrollo del mismo, por lo tanto, es importante que se le dedique tiempo a la configuración inicial del proyecto teniendo una visión a futuro tanto del proyecto como del equipo que lo va a desarrollar para que el mismo sea lo más eficiente posible.
 
 # Resumen
+<h1 id="resumen">Resumen</h1>
 
 Pasos a seguir para crear un proyecto rápido y eficiente en NestJS (Modificable según las necesidades y el criterio de cada uno) suponiendo que estamos utilizando VS Code como editor de código y Jest como framework de testing:
 
