@@ -68,13 +68,13 @@ header {
 
 Con esto y los estilos de los elementos internos, obtenemos algo como lo siguiente:
 
----------------FOTO DE LA BARRA DE NAVEGACIÓN CON FLEX SIN 1
+![NavBar sin flex 1 Brand](https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/9aa9b2b2-f625-4ed0-b30e-50432b0ef096)
 
 Como vemos, parece ya estar listo y bien centrado, pero vamos a jugar con los textos de la izquierda y la derecha para ver que sucede con el elemento centrado.
 
 Vamos a hacer que el texto de la izquierda sea más largo, por ejemplo, en vez de decir `Brand` vamos a poner `Bussiness Brand` con el editor de elementos del navegador.
 
----------------FOTO DE LA BARRA DE NAVEGACIÓN CON FLEX SIN 1 y titulo largo
+![Bussiness Brand work wrong](https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/fe27f13f-318f-4339-a0d8-20d7fe8cccf1)
 
 Claramente, el texto que supuestamente estaba bien centrado, ahora se movio para la izquierda, de hecho, esta centrado con respecto a los textos de la izquierda y derecha, pero no con respecto al header. Esto es porque el texto de la izquierda es más largo y por lo tanto el elemento se mueve hacia la izquierda.
 
@@ -126,18 +126,17 @@ Esta operación se puede realizar de manera más sencilla simplemente con `flex:
 
 Ahora podemos ver como el elemento del medio se centra correctamente sin importar el tamaño de los elementos de los extremos:
 
----------------FOTO DE LA BARRA DE NAVEGACIÓN CON FLEX 1 y titulo corto
+![NavBar correcta](https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/46af921f-f68c-4631-a5ea-1dbd5f08c400)
 
 Mientras que si alargamos el texto como hicimos anteriormente se vería de la siguiente manera:
 
----------------FOTO DE LA BARRA DE NAVEGACIÓN CON FLEX 1 y titulo largo
-
+![Bussiness Brand work fine](https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/3673d932-63f3-4dc6-b798-ff65f5ac05e7)
 
 ## Código final
 
 Para ver como quedó el código final y modificarlo para realizar pruebas pueden acceder en el [repositorio del ejemplo de barra de navegación para HTML y CSS](https://github.com/nicovillamonte/eg-navbar-CSS).
 
-
+<br>
 
 ### Datos del cheat sheet
 
