@@ -4,6 +4,10 @@ Existen pseudoelementos en css que nos permitirán personalizar la barra de scro
 
 1. [Barra de scroll de Mac OS](#barra-de-scroll-de-mac-os)
 2. [Pseudo elementos de la barra de scroll](#pseudoelementos)
+3. [Utilidad](#utilidad)
+4. [Contras](contras)
+
+- [Datos del cheat sheet](#cheat-sheet-info)
 
 
 <h2 id="barra-de-scroll-de-mac-os">Barra de scroll de Mac OS</h2>
@@ -33,14 +37,13 @@ Para personalizar la barra de scroll como la que se muestra en los dispositivos 
 Lo que nos dará como resultado una barra como la siguiente:
 
 <p align="center">
-  <img src='image.png' align="center" />
+  <img src='https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/a5aeeac2-d094-4377-946a-8c92ab758bc6' align="center" />
 </p>
-
 
 En vez de la original que se ve de ésta manera:
 
 <p align="center">
-  <img src='image-1.png' align="center" />
+  <img src='https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/4b8cad7e-6dcf-4952-acce-d76c81e700fa' align="center" />
 </p>
 
 
@@ -57,20 +60,19 @@ Estos son los pseudoelementos más importantes, pero no son todos. Para ver la l
 
 Además se pueden utilizar los pseudoelementos `:horizontal` y `:vertical` para darle un estilo diferente a cada barra de scroll individualmente.
 
-
-## Utilidad
+<h2 id="utilidad">Utilidad</h2>
 
 Esto es algo esplendido visualmente, teniendo en cuenta que la barra de scroll que viene por defecto muchas veces no es del todo linda y podría romper con la estética del sitio. 
 
 Además de que se puede personalizar la misma para que sea un elemento más de la página con su misma temática. Con la imaginación todo es posible.
 
-## Contras
+<h2 id="contras">Contras</h2>
 
 Esto no lo soportan en su totalidad todos los navegadores, de hecho que comience con -webkit quiere decir en la mayoría de los casos que solo lo soporta para navegadores basados en webkit, como lo son Chrome y Safari. Muchos usuarios no van a ver estos cambios y, en algunos casos, hasta puede llegar a romper otros estilos de la página. Así que si se desea utilizar es recomendable hacerlo con precaución y hacer pruebas en diferentes navegadores.
 
 <br>
 
-### Datos del cheat sheet
+<h3 id="cheat-sheet-info">Datos del cheat sheet</h3>
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 30/08/2023 <br>
