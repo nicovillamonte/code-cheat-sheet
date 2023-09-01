@@ -4,7 +4,18 @@ El Hook de React `useState` te permite añadir _reactividad_ a componentes funci
 
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
-## Sintaxis
+1. [Sintaxis](#sintaxis)
+2. [Utilización del estado](#utilizacion)
+   1. [Obtener el valor del estado](#utilizacion-getter)
+   2. [Actualizar el valor del estado](#utilizacion-setter)
+3. [Actualizando objetos y arreglos](#actualizando-mutable)
+4. [Actualizando el estado basandose en el estado anterior](#actualizando-previo)
+5. [Más Información](#mas-info)
+
+- [Datos del cheat sheet](#cheat-sheet-data)
+
+
+<h2 id="sintaxis">Sintaxis</h2>
 
 ```ts
 const [state, setState] = useState<type>(initialState);
@@ -35,11 +46,11 @@ Tambien puede utilizarse cuando se inicializa con un valor `null`:
 const [user, updateUser] = useState<User | null>(null);
 ```
 
-## Utilización del estado
+<h2 id="utilizacion">Utilización del estado</h2>
 
 Se puede utilizar el estado en cualquier parte del componente, acá se muestran las formas en las que más se suelen utilizar los estados.
 
-### Obtener el valor del estado
+<h3 id="utilizacion-getter">Obtener el valor del estado</h3>
 
 ```tsx
 const [name, setName] = useState("");
@@ -49,7 +60,7 @@ return <h1>{name}</h1>;
 
 En este caso se mostraría como título el valor del estado `name`. Es un ejemplo simple que hay que entender para pasar al siguiente.
 
-### Actualizar el valor del estado
+<h3 id="utilizacion-setter">Actualizar el valor del estado</h3>
 
 ```tsx
 const [name, setName] = useState("");
@@ -66,7 +77,7 @@ return <>
 
 En este caso se muestra un input. El input contiene el valor del estado name constantemente actualizado, mientras que él mismo es el que lo actualiza con el evento `onChange`, que llama a una función que actualiza el estado con el valor del input, lo que es reflejado tanto en el valor del mismo input como en el span que muestra el valor del estado.
 
-## Actualizando objetos y arreglos
+<h2 id="actualizando-mutable">Actualizando objetos y arreglos</h2>
 
 Los estados pueden ser de cualquier tipo de dato, incluyendo objetos y arreglos, los cuales se entiende que son mutables. Mientras que el estado en React se debe mantener inmutable, se puede actualizar el estado de un objeto o arreglo de la siguiente manera:
 
@@ -99,7 +110,7 @@ const handleClick = (newItem: number) => {
 };
 ```
 
-## Actualizando el estado basandose en el estado anterior
+<h2 id="actualizando-previo">Actualizando el estado basandose en el estado anterior</h2>
 
 Cuando se actualiza el estado, se puede utilizar el estado anterior para actualizarlo. Esto es muy útil en ciertas ocaciones que se quiera actualizar el estado dos veces seguidas por ejemplo, ya que el estado se actualiza de manera asíncrona.
 
@@ -125,15 +136,15 @@ const handleClick = () => {
 
 En este caso se actualizará a 2 con tan solo el primer click, ya que el segundo `setCount` se actualizará con el valor del estado anterior, que en este caso es 1.
 
-## Más Información
+<h2 id="mas-info">Más Información</h2>
 
-Se puede ver la [documentación de React]((https://legacy.reactjs.org/docs/hooks-reference.html#usestate)) sobre el Hook `useState`.
-
-El hook useState suele utilizarse bastante junto con el hook `useEffect`. (Proximamente habrá un cheat sheet).
+- Se puede ver la [documentación de React]((https://legacy.reactjs.org/docs/hooks-reference.html#usestate)) sobre el Hook `useState`.
+- Otra fuente más compoleta. [useState in React: A complete guide](https://blog.logrocket.com/guide-usestate-react/)
+- El hook useState suele utilizarse bastante junto con el hook `useEffect`. (Proximamente habrá un cheat sheet).
 
 <br>
 
-### Datos del cheat sheet
+<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 31/08/2023 <br>
