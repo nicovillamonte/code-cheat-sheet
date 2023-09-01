@@ -127,6 +127,15 @@ En este caso se actualizará a 2 con tan solo el primer click, ya que el segundo
 
 ## Más Información
 
-Se puede ver la documentación de React sobre el Hook `useState` [acá](https://legacy.reactjs.org/docs/hooks-reference.html#usestate).
+Se puede ver la [documentación de React]((https://legacy.reactjs.org/docs/hooks-reference.html#usestate)) sobre el Hook `useState`.
 
 El hook useState suele utilizarse bastante junto con el hook `useEffect`. (Proximamente habrá un cheat sheet).
+
+<br>
+
+### Datos del cheat sheet
+
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 31/08/2023 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
