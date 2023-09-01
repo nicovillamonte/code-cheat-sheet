@@ -129,7 +129,7 @@ Si lo ejecutamos, veremos que en la consola se imprime el mensaje una sola vez, 
 
 <h2 id="mas-info">Más Información</h2>
 
-- Se puede ver la [documentación de React](https://legacy.reactjs.org/docs/hooks-reference.html#useeffect) sobre el Hook `useEffect`.
+- Se puede ver la [documentación de React](https://react.dev/reference/react/useEffect) sobre el Hook `useEffect`.
 - Otra fuente más compoleta. [A complete guide to the useEffect React Hook](https://blog.logrocket.com/useeffect-hook-complete-guide)
 - Otros hooks pueden verse en este mismo repositorio. [Code Cheat Sheet - React](https://github.com/nicovillamonte/code-cheat-sheet/tree/main/React)
 

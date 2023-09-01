@@ -138,7 +138,7 @@ En este caso se actualizará a 2 con tan solo el primer click, ya que el segundo
 
 <h2 id="mas-info">Más Información</h2>
 
-- Se puede ver la [documentación de React]((https://legacy.reactjs.org/docs/hooks-reference.html#usestate)) sobre el Hook `useState`.
+- Se puede ver la [documentación de React](https://react.dev/reference/react/useState) sobre el Hook `useState`.
 - Otra fuente más compoleta. [useState in React: A complete guide](https://blog.logrocket.com/guide-usestate-react/)
 - El hook useState suele utilizarse bastante junto con el hook `useEffect`. (Proximamente habrá un cheat sheet).
 
