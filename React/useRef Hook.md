@@ -2,6 +2,8 @@
 
 El hook `useRef` nos permite hacer referencia a un valor mutable que se mantendrá entre renders. Es decir, que el valor de la referencia persistirá durante toda la vida del componente.
 
+Vamos a utilizar `React` con `TypeScript` en este ejemplo.
+
 1. [Sintaxis](#sintaxis)
 2. [Casos de uso](#casos-uso)
    1. [Flag](#casos-uso-flag)
@@ -114,7 +116,7 @@ const Component = () => {
 
 Con este código, recibimos el valor del input cuando se presiona el botón de submit, sin necesidad de estar actualizando un estado constantemente cada vez que se modifica el valor del input.
 
-**IMPORTANTE**: No es buena práctica el uso desmedido del `useRef` para manejar formularios. Recordar que siempre existe la manera vanilla de manejar formularios con JavaScript. Por lo tanto, hay que saber elegir en cada situación si utilizar un `useRef`, `useState` o la manera vanilla, teniendo en cuenta los conceptos de manejo de formularios de forma controlada y no controlada.
+> **IMPORTANTE**: No es buena práctica el uso desmedido del `useRef` para manejar formularios. Recordar que siempre existe la manera vanilla de manejar formularios con JavaScript. Por lo tanto, hay que saber elegir en cada situación si utilizar un `useRef`, `useState` o la manera vanilla, teniendo en cuenta los conceptos de manejo de formularios de forma controlada y no controlada.
 
 
 <h3 id="casos-uso-focus">Hacer focus en un elemento al cargar el componente</h3>
