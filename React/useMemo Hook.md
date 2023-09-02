@@ -85,7 +85,9 @@ El problema que tenemos con este ejemplo es que no solamente se va a ejecutar la
 
 Esto es algo que no queremos que suceda porque la función `numbersSum` va a darnos siempre el mismo resultado mientras no cambie el estado de la lista de numeros.
 
-![](image.png)
+<p align="center">
+   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/b5a43bc5-0310-457d-9037-fc17e4f4de4e" alt="useMemo-wrong-case">
+</p>
 
 Aquí podemos ver que hemos ingresado 4 numeros y la función `numbersSum` se ha ejecutado 4 veces, una por cada vez que se ha actualizado el estado del input. Todos los resultados de esta función fueron cero, porque la lista de numeros no cambió.
 
@@ -114,12 +116,15 @@ Si ahora probamos nuevamente el código, vamos a percatarnos de que cuando escri
 
 Acá escribimos en el input:
 
-![Alt text](image-1.png)
+<p align="center">
+   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/7743ab42-c428-4be5-9d85-0b411a926dec" alt="useMemo-well-case">
+</p>
 
 Acá presionamos el botón que añade el número que se introdujo en el input a la lista de números:
 
-![Alt text](image-2.png)
-
+<p align="center">
+   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/748c38e8-0f61-40fb-93f1-e4f721a8a079" alt="useMemo-button-click">
+</p>
 
 <h2 id="a-tener-en-cuenta">A tener en cuenta</h2>
 
