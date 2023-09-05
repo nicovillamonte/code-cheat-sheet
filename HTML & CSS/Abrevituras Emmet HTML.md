@@ -2,6 +2,10 @@
 
 Las abreviaturas Emmet en HTML y CSS son una forma de escribir código HTML y CSS de manera más rápida y eficiente. Esto se logra gracias a que solamente se deben escribir sentencias con una combinación de abreviaturas y caracteres especiales, para luego expandir el código automáticamente a su forma completa.
 
+<p align="center">
+    <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/a36aafed-f81d-4cc2-b33d-0dfe2fd452f2" alt="emmet demostration" />
+</p>
+
 En este Cheat Sheet vamos a ver algunas abreviaturas importantes a tener en cuenta para incrementar la velocidad de programación y reducir la cantidad de errores al escribir código HTML únicamente, proximamente exisitirá otro Cheat Sheet para CSS.
 
 [**HTML**](#html)
