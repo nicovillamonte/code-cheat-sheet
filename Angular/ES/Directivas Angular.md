@@ -186,7 +186,7 @@ La directiva `ngStyle` se utiliza para añadir o eliminar estilos de un elemento
 
 En este ejemplo, la variable `textColor` debe contener un color válido, y la variable `fontSize` debe contener un número. Lo que hará que se pueda cambiar el color y el tamaño de la fuente del elemento dinámicamente.
 
-> **IMPORTANTE**: _No es recomendable utilizar el `ngStyle` por varias razones, pero la más importante es que la misma documentación de Angular, `ngStyle` ya no proporciona un valor significativo y podría eliminarse en el futuro._
+> **IMPORTANTE**: _No es recomendable utilizar el `ngStyle` por varias razones, pero la más importante es que según la misma documentación de Angular, `ngStyle` ya no proporciona un valor significativo y podría eliminarse en el futuro._
 
 
 <h2 id="mas-informacion">Más información</h2>
