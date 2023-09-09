@@ -192,7 +192,7 @@ El two-way binding es muy útil, sin embargo hay que utilizarlo cuando realmente
 
 - [Documentación de Angular - Binding Syntax](https://angular.io/guide/binding-syntax)
 - [Documentación de Angular - Two Way Binding](https://angular.io/guide/two-way-binding)
-- Cheat Sheet de directivas (_proximamente..._)
+- [Cheat Sheet de directivas](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Directivas%20Angular.md)
 
 <br>
 
