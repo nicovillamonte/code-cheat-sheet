@@ -130,7 +130,11 @@ Se puede notar que en el `useEffect` del componente `Double` se añadió un `con
 
 Lo que va a suceder en este caso es que cada vez que exista un re-renderizado del componente, se va a volver a crear la función `calculateDouble`, ya que la misma no se encuentra memorizada. Esto significa que, aunque el valor del estado `inputValue` no cambie, cuando el estado del color del fondo cambie, la función se va a volver a crear y el `useEffect` se va a volver a ejecutar.
 
-------------------------------------------GIF DE LA APLICACIÓN SIN UTILIZAR `useCallback`
+<p align="center">
+   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/afe5b043-8d1d-40db-a7b4-322d9269eef7" alt="useCallback_without" />
+</p>
+
+Se puede ver claro en el gif que cada vez que se presiona el botón para cambiar el fondo, se calcula innecesariamente el doble del valor del input.
 
 <h3 id="agregamos-el-hook-usecallback">Agregamos el hook <code>useCallback</code></h3>
 
@@ -144,7 +148,12 @@ const calculateDouble = useCallback(() => {
 
 Con solo este cambio, la función `calculateDouble` se va a volver a crear solamente cuando el valor del estado `inputValue` cambie, ya que es la única dependencia que le pasamos al hook. Mientras tanto, aunque haya re-renderizado del componente por factores externos como el estado del color de fondo, la función no se va a volver a crear y el `useEffect` no se va a volver a ejecutar.
 
-------------------------------------------GIF DE LA APLICACIÓN UTILIZANDO `useCallback`
+<p align="center">
+   <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/b0c79900-45f4-44b5-8c27-76cad24e311f" alt="useCallback_with" />
+</p>
+
+Ahora vemos que al presionar en el botón para cambiar el fondo, lo único que realiza es cambiar el fondo, sin calcular nuevamente el doble del valor en el re-renderizado.
+
 
 > Aunque los hooks `useMemo` y `useCallback` son muy parecidos en lo que hacen, la diferencia entre ellos es que `useMemo` memoriza el valor de retorno de una función, mientras que `useCallback` memoriza la función en sí misma.
 
