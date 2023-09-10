@@ -107,7 +107,7 @@ o
 
 Sin embargo, la primera es la forma correcta de hacerlo, por varias razones, entre ellas un tema de **Performance**, ya que con interpolación, Angular debe actualizar el atributo HTML para luego reflejar el cambio en el DOM, lo que generaría un re-renderizado absurdo de todo el elemento. Con property binding, Angular modifica directamente la propiedad del elemento en el DOM.
 
-Si se quiere saber más sobre la diferencia entre estos dos ejemplos, es recomendable que lean el artículo[_Binding a propiedad vs interpolación de strings, en Angular_](https://desarrolloweb.com/articulos/binding-propiedad-vs-interpolacion-strings.html)
+Si se quiere saber más sobre la diferencia entre estos dos ejemplos, es recomendable que lean el artículo [_Binding a propiedad vs interpolación de strings, en Angular_](https://desarrolloweb.com/articulos/binding-propiedad-vs-interpolacion-strings.html)
 
 
 <h2 id="event-binding">Event Binding</h2>
