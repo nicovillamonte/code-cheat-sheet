@@ -4,21 +4,42 @@ Los signals en Angular, desde la versión 16, comienzan a mostrar el lado reacti
 
 Si se quiere se puede ver el ejemplo del [conversor de millas a kilómetros con Signals](https://github.com/uqbar-project/eg-conversor-signals-angular).
 
-## ¿Cómo funciona todo SIN signals?
+1. [¿Cómo funciona todo SIN signals?](#how-works-without-signals)
+   1. [ZoneJS](#zonejs)
+   2. [Problema](#problem)
+2. [La solución: Signals](#solution)
+3. [Creación de un signal](#create-signal)
+4. [Consumir un signal con su getter](#consume-signal-getter)
+5. [Emitir un signal (Producers)](#emit-signal)
+   1. [Set](#set)
+   2. [Update](#update)
+   3. [Mutate](#mutate)
+6. [Consumir un signal (Consumers)](#consume-signal)
+   1. [Computed](#computed)
+   2.  [Effect](#effect)
+7. [Conclusión](#conclusion)
+8. [Más información](#mas-informacion)
 
-### ZoneJS
+
+- [Datos del cheat sheet](#cheat-sheet-data)
+
+<h2 id="how-works-without-signals">¿Cómo funciona todo SIN signals?</h2>
+
+<h3 id="zonejs">ZoneJS</h3>
+
 Anteriormente a la version 16, siempre se utilizaba `zonejs` para detectar los cambios en los componentes.
 
 Cuando se producía una cambio en la aplicación era detectado por `zonejs` y se activaba la deteccion de cambios en los componentes. En ese momento Angular comienza a recorrer todos los componentes del árbol de componentes y verifica si hay cambios en los estados de los mismos que afecten a la vista, si los hay, se actualizan en la vista.
 
-### Problema
+<h3 id="problem">Problema</h3>
+
 El problema que se presentaba con esta forma de deteccion de cambios es que se recorrian todos los componentes del árbol de componentes, sin importar si había cambios o no en los mismos. Esto generaba un consumo de recursos innecesario. Por lo que vinieron los **signals** a solucionar este problema.
 
-## La solución: Signals
+<h2 id="solution">La solución: Signals</h2>
 
 Los signals se basan en el concepto de `Producers` y `Consumers`. En el que los producers son los que emiten los cambios y los consumers son los que reciben los cambios sin la necesidad de recorrer todo el arbol en busca de donde se produjo el cambio. Por lo tanto, los signals permiten que los cambios se propaguen de forma eficiente.
 
-## Creación de un signal
+<h2 id="create-signal">Creación de un signal</h2>
 
 El proceso de crear un signal es muy simple. Solo debemos asignar a una variable el resultado de la función `signal` y pasarle como parametro el valor inicial del mismo.
 
@@ -26,7 +47,7 @@ El proceso de crear un signal es muy simple. Solo debemos asignar a una variable
 millas = signal(0);
 ```
 
-## Consumir un signal
+<h2 id="consume-signal-getter">Consumir un signal con su getter</h2>
 
 La forma de obtener el valor de un signal tambien es muy sencilla, solamente hay que llamar a la constante en la que se almaceno el signal como si fuera un `getter`.
 
@@ -46,11 +67,11 @@ Desde aqui vamos a poder manejarlo de la misma manera que haciamos con otros par
 <div>{{millas() | number: '1.1-2':locale}}</div>
 ```
 
-## Emitir un signal (Producers)
+<h2 id="emit-signal">Emitir un signal (Producers)</h2>
 
 Para emitir un signal, debemos hacer un cambio en el valor del mismo. Para esto tenemos 3 opciones diferentes:
 
-### Set
+<h3 id="set">Set</h3>
 
 Para setear un valor _x_ en el signal, debemos llamar a la funcion `set` del mismo y pasarle como parametro el nuevo valor.
 
@@ -58,7 +79,7 @@ Para setear un valor _x_ en el signal, debemos llamar a la funcion `set` del mis
 millas.set(53);
 ```
 
-### Update
+<h3 id="update">Update</h3>
 
 Para actualizar un valor _x_ en el signal, debemos llamar a la funcion `update` del mismo y pasarle como parametro una funcion que recibe como parametro el valor actual del signal y retorna el nuevo valor.
 
@@ -66,7 +87,7 @@ Para actualizar un valor _x_ en el signal, debemos llamar a la funcion `update` 
 millas.update((millas) => millas + 1);
 ```
 
-### Mutate
+<h3 id="mutate">Mutate</h3>
 
 En el caso de que el valor del signal sea un objeto o un array, es decir, estados mutables, podemos utilizar la funcion `mutate` para modificar el valor interno del mismo.
 
@@ -78,11 +99,11 @@ this.conversiones.mutate((conversiones) =>
 );
 ```
 
-## Consumir un signal (Consumers)
+<h2 id="consume-signal">Consumir un signal (Consumers)</h2>
 
 Ademas del `getter` que se utiliza en los signals para consumirlos. Existen otras dos formas diferentes de consumir un cambio emitido con alguno de los metodos anteriores.
 
-### Computed
+<h3 id="computed">Computed</h3>
 
 La funcion `computed` nos permite crear un signal que depende de otros signals. Es decir, que cuando alguno de los signals que dependen de él cambia, el signal `computed` también cambia.
 
@@ -100,7 +121,7 @@ valido = computed(() => millas() > 0);
 
 En este caso estamos haciendo una validación de que el valor de millas sea mayor a 0. Si esto se cumple, el signal `valido` va a emitir un valor `true`, en caso contrario va a emitir un valor `false`. Pero mientras no se cumpla, aunque pasemos por los valores -5, -4, -3, -2 y -1, habiendo cambiado el valor 4 veces, el signal no va a emitir un cambio hasta que el valor de millas sea mayor a 0, recien ahi vamos a obtener un cambio en el signal `valido` y lo vamos a poder consumir. **Esto tiene un alto potencial.**
 
-### Effect
+<h3 id="effect">Effect</h3>
 
 La funcion `effect` se llama siempre en el constructor del componente y le podemos definir una función en su interior. Esa funcion se va a ejecutar cada vez que se produzca un cambio en alguno de los signals que se encuentren dentro de la misma.
 
@@ -167,9 +188,24 @@ HTML del componente padre:
 En este caso, cuando se borre un item del signal pasado al componente hijo en el mismo, se va a emitir un cambio en el signal y se va a actualizar el valor en el componente padre. Por lo que se va a llamar al effect y podra ver en la consola del navegador. 
 
 
-# Conclusión
+<h1 id="conclusion">Conclusión</h1>
 
 A simple vista el `signal` no cambia nada en la interfaz grafica. Pero hace que la misma sea mucho mas eficiente en la deteccion de cambios, lo que se traduce en un mejor rendimiento de la aplicacion en comparacion con `ZoneJS`.
 
 Anteriormente existía la posibilidad de hacer algo parecido con `BehaviorSubject` de `RxJS`, pero no era tan sencillo de implementar como lo es con los `signals`, ademas de que utiliza observables, lo que nos obliga a ser cuidadosos con las suscripciones y desuscripciones de los mismos.
 
+
+<h2 id="mas-informacion">Más información</h2>
+
+- [Documentación de Angular sobre signals](https://angular.io/guide/signals)
+- [Core de los Signals en Angular](https://angular.io/api/core/signal)
+- [Ejemplo de Signals en Angular con un conversor de millas a kilometros](https://github.com/uqbar-project/eg-conversor-signals-angular)
+
+<br>
+
+<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 13/09/2023 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
