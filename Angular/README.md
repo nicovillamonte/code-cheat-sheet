@@ -9,3 +9,5 @@
 - [Data Binding](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Data%20Binding.md)
 - [Directivas](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Directivas%20Angular.md)
 - [Testing Helper](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Testing%20Helper.md) (Abstracción de código repetitivo en los tests)
+- [Custom Pipes](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Custom%20Pipes.md)
+- [Signals V16](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Signals.md)
