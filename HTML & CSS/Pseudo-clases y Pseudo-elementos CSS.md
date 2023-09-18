@@ -246,16 +246,16 @@ input::placeholder {
 
 Según la documentación de css, los siguientes son todos los pseudo-elementos existentes hasta el día de la fecha en la que se escribió este Cheat Sheet:
 
-- [::after](https://developer.mozilla.org/es/docs/Web/CSS/::after)
-- [::before](https://developer.mozilla.org/es/docs/Web/CSS/::before)
-- [::first-letter](https://developer.mozilla.org/es/docs/Web/CSS/::first-letter)
-- [::first-line](https://developer.mozilla.org/es/docs/Web/CSS/::first-line)
-- [::selection](https://developer.mozilla.org/es/docs/Web/CSS/::selection)
-- [::backdrop](https://developer.mozilla.org/es/docs/Web/CSS/::backdrop)
-- [::placeholder](https://developer.mozilla.org/es/docs/Web/CSS/::placeholder) (Experimental)
-- [::marker](https://developer.mozilla.org/es/docs/Web/CSS/::marker) (Experimental)
-- [::spelling-error](https://developer.mozilla.org/es/docs/Web/CSS/::spelling-error) (Experimental)
-- [::grammar-error](https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error) (Experimental)
+- [`::after`](https://developer.mozilla.org/es/docs/Web/CSS/::after)
+- [`::before`](https://developer.mozilla.org/es/docs/Web/CSS/::before)
+- [`::first-letter`](https://developer.mozilla.org/es/docs/Web/CSS/::first-letter)
+- [`::first-line`](https://developer.mozilla.org/es/docs/Web/CSS/::first-line)
+- [`::selection`](https://developer.mozilla.org/es/docs/Web/CSS/::selection)
+- [`::backdrop`](https://developer.mozilla.org/es/docs/Web/CSS/::backdrop)
+- [`::placeholder`](https://developer.mozilla.org/es/docs/Web/CSS/::placeholder) (Experimental)
+- [`::marker`](https://developer.mozilla.org/es/docs/Web/CSS/::marker) (Experimental)
+- [`::spelling-error`](https://developer.mozilla.org/es/docs/Web/CSS/::spelling-error) (Experimental)
+- [`::grammar-error`](https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error) (Experimental)
 
 
 Sin embargo, al igual que en las pseudo-clases, hay que tener en cuenta que existen algunos más. Por ejemplo, el pseudo-elemento `::webkit-scrollbar` y sus derivados se utilizan para darle estilos a los scrollbars de los elementos. Para poder encontrarlos hay que escarbar un poco más a fondo en la [documentación de pseudo-elementos de css](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
