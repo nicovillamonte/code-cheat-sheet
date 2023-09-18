@@ -11,3 +11,4 @@
 - [Testing Helper](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Testing%20Helper.md) (Abstracción de código repetitivo en los tests)
 - [Custom Pipes](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Custom%20Pipes.md)
 - [Signals V16](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Signals.md)
+- [Propiedades @Input y @Output](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Propiedades%20%40Input%20y%20%40Output.md)
