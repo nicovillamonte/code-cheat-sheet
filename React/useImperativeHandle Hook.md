@@ -7,18 +7,18 @@ Para poder entender este hook es recomendable ver el Cheat Sheet del hook `useRe
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
-2. [UseRef y su problema en React](#utilizacion)
-3. [Solución](#solucion)
-   1. [forwardRef](#solucion-forwardref)
-   2. [useImperativeHandle](#solucion-useimperativehandle)
-4. [Ejemplo sencillo para entenderlo mejor](#ejemplo)
-5. [¿Cuándo utilizar este Hook?](#cuando-utilizar-este-hook)
-6. [Más Información](#mas-info)
+2. [UseRef y su problema en React](#useref-y-su-problema-en-react)
+3. [Solución](#solución)
+   1. [forwardRef](#forwardref)
+   2. [useImperativeHandle](#useimperativehandle)
+4. [Ejemplo sencillo para entenderlo mejor](#ejemplo-sencillo-para-entenderlo-mejor)
+5. [¿Cuándo utilizar este Hook?](#¿cuándo-utilizar-este-hook)
+6. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 useImperativeHandle(ref, createHandle, [deps]);
@@ -30,8 +30,7 @@ El hook `useImperativeHandle` recibe tres parámetros:
 - `createHandle`: es una función que devuelve un objeto con las propiedades y métodos que se van a exponer al componente padre.
 - `deps`: es un array de dependencias que se encarga de la actualización de la referencia cuando cambia alguno de sus valores. Este parámetro es opcional, si no se pasa, la referencia se va a actualizar en cada renderizado del componente.
 
-
-<h2 id="utilizacion">UseRef y su problema en React</h2>
+## UseRef y su problema en React
 
 El hook `useRef` nos permite crear una referencia mutable que persiste durante todo el ciclo de vida de un componente. Esto nos permite utilizar la referencia en cualquier parte del componente. Por ejemplo, podríamos realizar algo como lo siguiente para mostrarlo de ejemplo:
 
@@ -79,11 +78,11 @@ const App = () => {
 
 Por lo tanto, cuando nos encontramos en una instancia de árbol de componentes y se necesita utilizar una referencia de un componente hijo en un componente padre, no nos basta con el hook `useRef`. E aquí es donde entra en juego el hook `useImperativeHandle`.
 
-<h2 id="solucion">Solución</h2>
+## Solución
 
 Vamos a solucionar el problema con el que nos topamos anteriormente utilizando el hook `useImperativeHandle` y explicaremos a detalle qué es lo que está sucediendo.
 
-<h3 id="solucion-forwardref">forwardRef</h3>
+### forwardRef
 
 Para esta solución, el primer paso es envolver el componente hijo con la función `forwardRef`. Esta función nos permite exponer la referencia que se le pasa al componente hijo desde el componente padre. Para ello, luego de las `props`, el componente hijo debe recibir la referencia que se le pasa desde el componente padre.
 
@@ -106,7 +105,7 @@ const MyInput = forwardRef((_, ref) => {
 
 Vemos que de esta manera todavía no funciona, pues falta exponer la referencia que se le pasa al componente hijo desde el componente padre. Para ello, debemos utilizar el hook `useImperativeHandle`.
 
-<h3 id="solucion-useimperativehandle">useImperativeHandle</h3>
+### useImperativeHandle
 
 Vamos a exponer la referencia en nuestro componente hijo envuelto en la función `forwardRef` utilizando el hook `useImperativeHandle`.
 
@@ -142,7 +141,7 @@ const App = () => {
 De esta manera, la referencia `myInputRef` va a tener en su valor actual los elementos del objeto que se creo en el hook `useImperativeHandle` del componente hijo. Por lo tanto, al hacer `myInputRef.current?.focus()` se va a ejecutar la función `focus()` que se definió en el hook `useImperativeHandle` del componente hijo. Que, a su vez, internamente ejecuta el `focus()` de la referencia interna del Input en el componente hijo.
 
 
-<h2 id="ejemplo">Ejemplo sencillo para entenderlo mejor</h2>
+## Ejemplo sencillo para entenderlo mejor
 
 Dentro de los elementos del objeto definido en el hook `useImperativeHandle`, se puede devolver cualquier cosa que se necesite. Vamos a hacer un ejemplo más sencillo con un `console.log` que, aunque no tenga mucho sentido, va a ayudar a entenderlo mejor.
 
@@ -198,11 +197,11 @@ Estar atenetos a que la referencia interna del componente hijo es de tipo `HTMLI
 
 Ahora, cuando se haga click en el botón `Show Value`, se va a imprimir en consola el valor del input.
 
-<h2 id="cuando-utilizar-este-hook">¿Cuándo utilizar este Hook?</h2>
+## ¿Cuándo utilizar este Hook?
 
 En la documentación oficial de React, nos dicen que no debemos abusar del hook `useRef`, por lo tanto, tampoco debemos abusar del `useImperativeHandle`, siempre que se pueda se deben utilizar los estados para solucionar el problema que se necesite. Por lo tanto, se recomienda utilizarlos solo cuando sea realmente necesario.
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación oficial de React](https://react.dev/reference/react/useImperativeHandle) para el Hook `useImperativeHandle`.
 - Otros artículos
@@ -211,9 +210,10 @@ En la documentación oficial de React, nos dicen que no debemos abusar del hook 
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 06/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

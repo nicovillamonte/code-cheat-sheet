@@ -5,18 +5,18 @@ El hook `useRef` nos permite hacer referencia a un valor mutable que se mantendr
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
-2. [Casos de uso](#casos-uso)
-   1. [Flag](#casos-uso-flag)
-   2. [Guardar estados previos](#casos-uso-previous-states)
-   3. [Enlazar a elementos del DOM](#casos-uso-DOM)
-   4. [Hacer focus en un elemento al cargar el componente](#casos-uso-focus)
-   5. [Otros usos...](#casos-uso-other)
-3. [Más Información](#mas-info)
+2. [Casos de uso](#casos-de-uso)
+   1. [Flag](#flag)
+   2. [Guardar estados previos](#guardar-estados-previos)
+   3. [Enlazar a elementos del DOM](#enlazar-a-elementos-del-dom)
+   4. [Hacer focus en un elemento al cargar el componente](#hacer-focus-en-un-elemento-al-cargar-el-componente)
+   5. [Otros usos...](#otros-usos)
+3. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 const ref = useRef(initialValue);
@@ -38,11 +38,11 @@ const Component = () => {
 La propiedad `.current` del objeto devuelto se inicializará con el argumento pasado (`initialValue`). Y luego podemos acceder al valor y modificarlo con esta misma propiedad.
 
 
-<h2 id="casos-uso">Casos de uso</h2>
+## Casos de uso
 
 Vamos a ver algunos ejemplos en los que se puede llegar a utilizar el useRef gracias a la persistencia de su valor entre renders de un mismo componente.
 
-<h3 id="casos-uso-flag">Flag</h3>
+### Flag
 
 Podemos utilizar el `useRef` para crear una flag que nos permita tener cualquier tipo de información, por ejemplo si ya se ha interactuado alguna vez con un elemento específico del componente.
 
@@ -62,7 +62,7 @@ const Component = () => {
 }
 ```
 
-<h3 id="casos-uso-previous-states">Guardar estados previos</h3>
+### Guardar estados previos
 
 Podemos utilizar el `useRef` para guardar estados previos de un componente. Por ejemplo, podemos guardar el estado anterior de un componente para poder compararlo con el estado actual y realizar alguna acción en base a eso.
 
@@ -90,7 +90,7 @@ En este codigo podemos ver que si el estado actual es igual al estado anterior q
 
 
 
-<h3 id="casos-uso-DOM">Enlazar a elementos del DOM</h3>
+### Enlazar a elementos del DOM
 
 Se ve muy seguido el uso del `useState` para manejar un formulario en React de manera **controlada**, lo que tiene sus ventajas y desventajas, siendo una de las últimas el constante renderizado del componente cada vez que se modifica el valor de un input, por ejemplo.
 
@@ -119,7 +119,7 @@ Con este código, recibimos el valor del input cuando se presiona el botón de s
 > **IMPORTANTE**: No es buena práctica el uso desmedido del `useRef` para manejar formularios. Recordar que siempre existe la manera vanilla de manejar formularios con JavaScript. Por lo tanto, hay que saber elegir en cada situación si utilizar un `useRef`, `useState` o la manera vanilla, teniendo en cuenta los conceptos de manejo de formularios de forma controlada y no controlada.
 
 
-<h3 id="casos-uso-focus">Hacer focus en un elemento al cargar el componente</h3>
+### Hacer focus en un elemento al cargar el componente
 
 Podemos utilizar el `useRef` para hacer focus en un elemento específico cuando se carga el componente.
 
@@ -137,12 +137,12 @@ const Component = () => {
 }
 ```
 
-<h3 id="casos-uso-other">Otros usos...</h3>
+### Otros usos...
 
 Es importante entender que aquí se están mostrando muchos ejemplos de uso del `useRef` de forma didáctica para entenderlo en su totalidad. Pero no es recomendable utilizarlo para todos estos casos, ya que existen otras maneras de hacerlo que son más simples y claras.
 
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación oficial de React](https://es.react.dev/reference/react/useRef) para el Hook `useRef`.
 - Otros artículos
@@ -152,9 +152,10 @@ Es importante entender que aquí se están mostrando muchos ejemplos de uso del 
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 02/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

@@ -5,17 +5,17 @@ El Hook de React `useState` te permite añadir _reactividad_ a componentes funci
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
-2. [Utilización del estado](#utilizacion)
-   1. [Obtener el valor del estado](#utilizacion-getter)
-   2. [Actualizar el valor del estado](#utilizacion-setter)
-3. [Actualizando objetos y arreglos](#actualizando-mutable)
-4. [Actualizando el estado basandose en el estado anterior](#actualizando-previo)
-5. [Más Información](#mas-info)
+2. [Utilización del estado](#utilización-del-estado)
+   1. [Obtener el valor del estado](#obtener-el-valor-del-estado)
+   2. [Actualizar el valor del estado](#actualizar-el-valor-del-estado)
+3. [Actualizando objetos y arreglos](#actualizando-objetos-y-arreglos)
+4. [Actualizando el estado basandose en el estado anterior](#actualizando-el-estado-basandose-en-el-estado-anterior)
+5. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 const [state, setState] = useState<type>(initialState);
@@ -46,11 +46,11 @@ Tambien puede utilizarse cuando se inicializa con un valor `null`:
 const [user, updateUser] = useState<User | null>(null);
 ```
 
-<h2 id="utilizacion">Utilización del estado</h2>
+## Utilización del estado
 
 Se puede utilizar el estado en cualquier parte del componente, acá se muestran las formas en las que más se suelen utilizar los estados.
 
-<h3 id="utilizacion-getter">Obtener el valor del estado</h3>
+### Obtener el valor del estado
 
 ```tsx
 const [name, setName] = useState("");
@@ -60,7 +60,7 @@ return <h1>{name}</h1>;
 
 En este caso se mostraría como título el valor del estado `name`. Es un ejemplo simple que hay que entender para pasar al siguiente.
 
-<h3 id="utilizacion-setter">Actualizar el valor del estado</h3>
+### Actualizar el valor del estado
 
 ```tsx
 const [name, setName] = useState("");
@@ -77,7 +77,7 @@ return <>
 
 En este caso se muestra un input. El input contiene el valor del estado name constantemente actualizado, mientras que él mismo es el que lo actualiza con el evento `onChange`, que llama a una función que actualiza el estado con el valor del input, lo que es reflejado tanto en el valor del mismo input como en el span que muestra el valor del estado.
 
-<h2 id="actualizando-mutable">Actualizando objetos y arreglos</h2>
+## Actualizando objetos y arreglos
 
 Los estados pueden ser de cualquier tipo de dato, incluyendo objetos y arreglos, los cuales se entiende que son mutables. Mientras que el estado en React se debe mantener inmutable, se puede actualizar el estado de un objeto o arreglo de la siguiente manera:
 
@@ -110,7 +110,7 @@ const handleClick = (newItem: number) => {
 };
 ```
 
-<h2 id="actualizando-previo">Actualizando el estado basandose en el estado anterior</h2>
+## Actualizando el estado basandose en el estado anterior
 
 Cuando se actualiza el estado, se puede utilizar el estado anterior para actualizarlo. Esto es muy útil en ciertas ocaciones que se quiera actualizar el estado dos veces seguidas por ejemplo, ya que el estado se actualiza de manera asíncrona.
 
@@ -136,7 +136,7 @@ const handleClick = () => {
 
 En este caso se actualizará a 2 con tan solo el primer click, ya que el segundo `setCount` se actualizará con el valor del estado anterior, que en este caso es 1.
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - Se puede ver la [documentación de React](https://react.dev/reference/react/useState) sobre el Hook `useState`.
 - Otra fuente más compoleta. [useState in React: A complete guide](https://blog.logrocket.com/guide-usestate-react/)
@@ -144,9 +144,10 @@ En este caso se actualizará a 2 con tan solo el primer click, ya que el segundo
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 31/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

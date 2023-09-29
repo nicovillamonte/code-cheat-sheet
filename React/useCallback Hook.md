@@ -6,15 +6,15 @@ El hook `useCallback` nos permite crear una versión memorizada de una función,
 
 1. [Sintaxis](#sintaxis)
 2. [Ejemplo](#ejemplo)
-   1. [¿Qué podemos hacer y cómo?](#que-podemos-hacer-y-como)
-   2. [¿Qué pasa si no utilizamos useCallback?](#que-pasa-si-no-utilizamos-usecallback)
+   1. [¿Qué podemos hacer y cómo?](#¿qué-podemos-hacer-y-cómo)
+   2. [¿Qué pasa si no utilizamos useCallback?](#¿qué-pasa-si-no-utilizamos-usecallback)
    3. [Agregamos el hook useCallback](#agregamos-el-hook-usecallback)
-   4. [¿Vale la pena?](#vale-la-pena)
-3. [Más Información](#mas-info)
+   4. [¿Vale la pena?](#¿vale-la-pena)
+3. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```tsx
 const cachedFn = useCallback(fn, dependencies);
@@ -37,7 +37,7 @@ El hook `useCallback` recibe dos argumentos:
 - `dependencies`: Un array de dependencias, valores reactivos, que solamente si éstos cambian, se volverá a crear la función.
 
 
-<h2 id="ejemplo">Ejemplo</h2>
+## Ejemplo
 
 Pensemos por un momento en una aplicación en la que se deba ingresar un número en un input y se quiera mostrar el doble del mismo en un elemento `p`.
 
@@ -45,7 +45,7 @@ El ejemplo parece ser un poco confuso al principio, así que vamos a ir por part
 
 > Este ejemplo es didáctico, ya que no va a ser necesario utilizar `useCallback` en este caso. Sin embargo, podemos entender cómo funciona el hook gracias a éste.
 
-<h3 id="que-podemos-hacer-y-como">¿Que podemos hacer y cómo?</h3>
+### ¿Qué podemos hacer y cómo?
 
 En primer lugar, vamos a enumerar las cosas que la aplicación nos debería permitir hacer:
 
@@ -124,7 +124,7 @@ const Double: FC<Props> = ({ calculate }) => {
 
 Lo que hace este componente es, mediante un estado propio, almacenar el valor del doble del número ingresado utilizando la función llamada por parametro dentro de un `useEffect` que se ejecuta cada vez que el valor de la misma cambia.
 
-<h3 id="que-pasa-si-no-utilizamos-usecallback">¿Qué pasa si no utilizamos <code>useCallback</code>?</h3>
+### ¿Qué pasa si no utilizamos `useCallback`?
 
 Se puede notar que en el `useEffect` del componente `Double` se añadió un `console.log` para poder ver cuándo se ejecuta el mismo.
 
@@ -136,7 +136,7 @@ Lo que va a suceder en este caso es que cada vez que exista un re-renderizado de
 
 Se puede ver claro en el gif que cada vez que se presiona el botón para cambiar el fondo, se calcula innecesariamente el doble del valor del input.
 
-<h3 id="agregamos-el-hook-usecallback">Agregamos el hook <code>useCallback</code></h3>
+### Agregamos el hook `useCallback`
 
 Para solucionar este "problema" que podemos llegar a tener, vamos a utilizar el hook `useCallback` para memorizar la función `calculateDouble`.
 
@@ -157,49 +157,23 @@ Ahora vemos que al presionar en el botón para cambiar el fondo, lo único que r
 
 > Aunque los hooks `useMemo` y `useCallback` son muy parecidos en lo que hacen, la diferencia entre ellos es que `useMemo` memoriza el valor de retorno de una función, mientras que `useCallback` memoriza la función en sí misma.
 
-<h3 id="vale-la-pena">¿Vale la pena?</h3>
+### ¿Vale la pena?
 
 Esto es algo que no nos cambia mucho el rendimiento de la aplicación, al menos que la función que se este creando nuevamente en cada re-renderizado del componente sea muy costosa, lo que puede llegar a generar un problema de performance. Este sería el único caso en el que se debe utilizar el hook `useCallback`.
 
 Por lo tanto, la respuesta es no, en la mayoría de los casos el costo de las funciones que se vuelven a crear en cada re-renderizado del componente no suele ser tan alto como para que sea necesario utilizar el hook `useCallback`.
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación de React](https://react.dev/reference/react/useCallback) del Hook useCallback.
 - Cheat Sheet del hook [useMemo](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/React/useMemo%20Hook.md)
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 10/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

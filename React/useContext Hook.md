@@ -4,18 +4,19 @@ El [contexto de React](https://react-typescript-cheatsheet.netlify.app/docs/basi
 
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
-1. [Creando el contexto](#creando-contexto)
-2. [Proveyendo el contexto](#proveyendo-contexto)
-3. [Consumiendo el contexto](#consumiendo-contexto)
-4. [Crear un custom hook con contexto](#crear-custom-hook)
-   1. [Creación del contexto y su provider](#crear-custom-hook-provider)
-   2. [Creación del hook](#crear-custom-hook-hook)
-   3. [Consumo del hook](#crear-custom-hook-consumo)
-5. [Más Información](#mas-info)
-6. [Datos del cheat sheet](#cheat-sheet-data)
+1. [Creando el contexto](#creando-el-contexto)
+2. [Proveyendo el contexto](#proveyendo-el-contexto)
+3. [Consumiendo el contexto](#consumiendo-el-contexto)
+4. [Crear un custom hook con contexto](#crear-un-custom-hook-con-contexto)
+   1. [Creación del contexto y su provider](#creación-del-contexto-y-su-provider)
+   2. [Creación del hook](#creación-del-hook)
+   3. [Consumo del hook](#consumo-del-hook)
+5. [Más Información](#más-información)
+   
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="creando-contexto">Creando el contexto</h2>
+## Creando el contexto
 
 Para crear un contexto, se utiliza la función `createContext` de React, que recibe como argumento el valor inicial del contexto.
 
@@ -35,7 +36,7 @@ type Theme = "light" | "dark";
 const ThemeContext = createContext<Theme>("light");
 ```
 
-<h2 id="proveyendo-contexto">Proveyendo el contexto</h2>
+## Proveyendo el contexto
 
 Para proveer el contexto a los componentes, se utiliza el componente `Context.Provider` que recibe como argumento el valor que se quiere proveer. Podemos envolver toda la aplciación o una parte de la misma.
 
@@ -57,7 +58,7 @@ root.render(
 )
 ```
 
-<h2 id="consumiendo-contexto">Consumiendo el contexto</h2>
+## Consumiendo el contexto
 
 Para consumir el contexto, se utiliza el hook `useContext` de React, que recibe como argumento el contexto que se quiere consumir y devuelve el valor que se provee en el `Context.Provider`.
 
@@ -71,9 +72,9 @@ En el siguiente ejemplo, se consume el contexto del modo claro u oscuro creado a
 const theme = useContext(ThemeContext);
 ```
 
-<h2 id="crear-custom-hook">Crear un custom hook con contexto</h2>
+## Crear un custom hook con contexto
 
-<h3 id="crear-custom-hook-provider">Creación del contexto y su provider</h3>
+### Creación del contexto y su provider
 
 Se puede crear un custom hook que utilice el contexto para proveer el valor del mismo a los componentes que lo consuman y reutilizar varios estados y funciones en diferentes componentes.
 
@@ -97,7 +98,7 @@ Vemos que agregamos a la fórmula un provider, el mismo tine la misma estructura
 
 El `Context` es el que tenemos que consumir, mientras que el `ContextProvider` es el que nos va a proveer acceso al contexto.
 
-<h3 id="crear-custom-hook-hook">Creación del hook</h3>
+### Creación del hook
 
 Para crear el hook, en un archivo diferente del proyecto vamos a poder codificar algo como lo siguiente importando el contexto creado anteriormente y el hook `useContext` de React:
 
@@ -114,7 +115,7 @@ export function useMyHook () {
 }
 ```
 
-<h3 id="crear-custom-hook-consumo">Consumo del hook</h3>
+### Consumo del hook
 
 Para consumir el hook, en el componente que queremos utilizarlo, importamos el hook creado anteriormente y lo utilizamos como cualquier otro hook:
 
@@ -136,7 +137,7 @@ const MyComponent = () => {
 }
 ```
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - Se puede ver la [documentación de React del Hook useContext](https://react.dev/reference/react/useContext).
 - Otros hooks pueden verse en este mismo repositorio. [Code Cheat Sheet - React](https://github.com/nicovillamonte/code-cheat-sheet/tree/main/React)
@@ -146,9 +147,10 @@ const MyComponent = () => {
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 31/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

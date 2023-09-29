@@ -5,16 +5,15 @@ El hook `useEffect` se encarga de invocar código como efecto secundario de un c
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
-2. [Ejecutar código al renderizar el componente](#ejecutar-una-vez)
-3. [Ejecutar código cada vez que se actualiza el estado](#ejecutar-cada-actualizacion)
-4. [Ejecutar código cuando se desrenderiza el componente](#ejecutar-desmontaje)
-5. [Casos de uso](#casos-uso)
-6. [Más Información](#mas-info)
+2. [Ejecutar código al renderizar el componente](#ejecutar-código-al-renderizar-el-componente)
+3. [Ejecutar código cada vez que se actualiza el estado](#ejecutar-código-cada-vez-que-se-actualiza-el-estado)
+4. [Ejecutar código cuando se desrenderiza el componente](#ejecutar-código-cuando-se-desrenderiza-el-componente)
+5. [Casos de uso](#casos-de-uso)
+6. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
-
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 useEffect(() => {
@@ -26,7 +25,7 @@ El `useEffect` recibe como **primer argumento** la función que se quiere ejecut
 
 Como **segundo argumento** recibe un arreglo de dependencias, que son las variables que determinarán, mediante cambios, cuándo se ejecutará la función que se pasa como primer argumento.
 
-<h2 id="ejecutar-una-vez">Ejecutar código al renderizar el componente</h2>
+## Ejecutar código al renderizar el componente
 
 Si el arreglo de dependencias está vacío, la función se ejecutará una sola vez, cuando el componente se renderice.
 
@@ -38,7 +37,7 @@ useEffect(() => {
 
 Si ejecutamos el código anterior, veremos que en la consola se imprime el mensaje una sola vez, cuando el componente se renderiza.
 
-<h2 id="ejecutar-cada-actualizacion">Ejecutar código cada vez que se actualiza el estado</h2>
+## Ejecutar código cada vez que se actualiza el estado
 
 Si el arreglo de dependencias contiene estados, la función se ejecutará cada vez que alguna de ellos reciba un cambio mediante su función de setter.
 
@@ -63,7 +62,7 @@ useEffect(() => {
 }, [name, age]);
 ```
 
-<h2 id="ejecutar-desmontaje">Ejecutar código cuando se desrenderiza el componente</h2>
+## Ejecutar código cuando se desrenderiza el componente
 
 Si la función que se pasa como primer argumento al `useEffect` devuelve una función, esta se ejecutará cuando el componente se desrenderice o destruya.
 
@@ -80,7 +79,7 @@ useEffect(() => {
 Si lo ejecutamos, veremos que en la consola se imprime el mensaje una sola vez, cuando el componente se renderiza, y luego se imprime el mensaje cuando el componente se desrenderiza al cambiar de página por ejemplo.
 
 
-<h2 id="casos-uso">Casos de uso</h2>
+## Casos de uso
 
 - **Ejecutar código al renderizar el componente**: Se puede utilizar por ejemplo para hacer un llamado a una API y obtener datos que se utilizarán en el componente.
 
@@ -127,7 +126,7 @@ Si lo ejecutamos, veremos que en la consola se imprime el mensaje una sola vez, 
     }, []);
     ```
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - Se puede ver la [documentación de React](https://react.dev/reference/react/useEffect) sobre el Hook `useEffect`.
 - Otra fuente más compoleta. [A complete guide to the useEffect React Hook](https://blog.logrocket.com/useeffect-hook-complete-guide)
@@ -136,9 +135,10 @@ Si lo ejecutamos, veremos que en la consola se imprime el mensaje una sola vez, 
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 31/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

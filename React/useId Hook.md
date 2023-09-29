@@ -5,16 +5,16 @@ El hook `useId` es un hook que nos permite generar un id único para un elemento
 Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
-2. [Utilización del Id](#utilizacion)
+2. [Utilización del Id](#utilización-del-id)
 3. [Ejemplo](#ejemplo)
    1. [Problema](#problema)
-   2. [Solución](#solucion)
-4. [Más Información](#mas-info)
+   2. [Solución](#solución)
+4. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 const id = useId();
@@ -23,7 +23,7 @@ const id = useId();
 Lo único que debemos realizar para utilizar el hook es llamarlo en el componente que queremos que tenga un id único. El hook se encargará de generar el id único y se deberá almacenar el mismo en una constante para luego utilizarlo.
 
 
-<h2 id="utilizacion">Utilización del Id</h2>
+## Utilización del Id
 
 El id generado por el hook se puede utilizar en cualquier elemento de la interfaz de usuario, pero es especialmente útil para los elementos que tienen un atributo `for` que apunta a un `id` de otro elemento. Por ejemplo:
 
@@ -34,7 +34,7 @@ El id generado por el hook se puede utilizar en cualquier elemento de la interfa
 
 En el ejemplo anterior, el `label` tiene un atributo `for` que apunta al `id` del `input`. Esto permite que al hacer click en el `label`, el `input` reciba el foco.
 
-<h2 id="ejemplo">Ejemplo</h2>
+## Ejemplo
 
 Vamos a ver un ejemplo de cómo utilizar el hook `useId` para solucionar un problema muy común cuando se utilizan componentes de React. Imaginemos que tenemos un componente que se encarga de renderizar una sección de un formulario, que contiene un `label` y un `input` que aplican la propiedad HTML `for`. Si no utilizaramos el hook `useId`, el código podría verse de la siguiente manera:
 
@@ -47,7 +47,7 @@ const Component: FC<Props> = () => {
 }
 ```
 
-<h3 id="problema">Problema</h3>
+### Problema
 
 Todo parece funcionar de maravilla cuando utilizamos el componente una sola vez, pero ¿qué pasa si utilizamos el componente dos veces en el mismo formulario?
 
@@ -76,7 +76,7 @@ El segundo `label` no apunta al `input` correcto, y esto se debe a que ambos `in
 </div>
 ```
 
-<h3 id="solucion">Solución</h3>
+### Solución
 
 Para solucionar este problema, podemos utilizar el hook `useId` para generar un id único para cada `input`:
 
@@ -104,7 +104,7 @@ De esta manera, cada vez que se renderice el componente, se generará un id úni
 
 Por lo que debemos tener en cuenta el uso del hook `useId` cuando utilizamos componentes que al renderizar más de una vez, puede llegar a generar una colisión de IDs en el código HTML de la página.
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación oficial de React](https://react.dev/reference/react/useId) para el Hook `useId`.
 - Otros artículos
@@ -113,9 +113,10 @@ Por lo que debemos tener en cuenta el uso del hook `useId` cuando utilizamos com
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 04/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

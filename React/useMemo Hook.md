@@ -6,17 +6,16 @@ Vamos a utilizar `React` con `TypeScript` en este ejemplo.
 
 1. [Sintaxis](#sintaxis)
 2. [Ejemplo](#ejemplo)
-   1. [Usando useState](#usestate-try)
-   2. [Problema](#usestate-problema)
-   3. [Solución](#usestate-solucion)
+   1. [Usando useState](#usando-usestate)
+   2. [Problema](#problema)
+   3. [Solución](#solución)
 3. [A tener en cuenta](#a-tener-en-cuenta)
-4. [Más Información](#mas-info)
+4. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```ts
 const cachedValue = useMemo(calculateValue, dependencies)
@@ -33,11 +32,11 @@ El hook `useMemo` recibe dos argumentos:
 - `calculateValue`: Función que se ejecutará para calcular el valor que se va a devolver.
 - `dependencies`: Array de dependencias que se utilizarán para calcular el valor. Si alguna de las dependencias cambia, se volverá a ejecutar la función `calculateValue` para calcular el nuevo valor. Si no cambia ninguna de las dependencias, se obtendrá el valor de la memoria cache.
 
-<h2 id="ejemplo">Ejemplo</h2>
+## Ejemplo
 
 Vamos a imaginar que tenemos un input de numeros en el que vamos añadiendo numeros a una lista y queremos calcular la suma de todos los numeros de la lista y mostrarlo.
 
-<h3 id="usestate-try">Usando useState</h3>
+## Usando useState
 
 Lo primero q vamos tender a realizar es a utilizar el hook `useState` para guardar la lista de numeros y con una función que utilice ese estado calcular la suma de todos los numeros de la lista en tiempo real de la siguiente manera:
 
@@ -79,7 +78,7 @@ A nivel de interfaz tenemos un input que va a actualizar el componente cada vez 
 En el _span_ utilizamos la función `numbersSum` para calcular la suma de todos los numeros de la lista con un parámetro: el estado de la lista de numeros. Ésto es lo que va a hacer que cada vez que haya un cambio en el estado de la lista de números se vuelva a ejecutar la función `numbersSum` para calcular la suma de todos los numeros de la lista y renderizar nuevamente el componente con el nuevo valor de la suma.
 
 
-<h3 id="usestate-problema">Problema</h3>
+### Problema
 
 El problema que tenemos con este ejemplo es que no solamente se va a ejecutar la función `numbersSum` cuando haya un cambio en el estado de la lista de numeros, sino que también se va a ejecutar cuando haya un cambio en el estado del input y con cualquier otro cambio que haga volver a renderizar el componente.
 
@@ -92,7 +91,7 @@ Esto es algo que no queremos que suceda porque la función `numbersSum` va a dar
 Aquí podemos ver que hemos ingresado 4 numeros y la función `numbersSum` se ha ejecutado 4 veces, una por cada vez que se ha actualizado el estado del input. Todos los resultados de esta función fueron cero, porque la lista de numeros no cambió.
 
 
-<h3 id="usestate-solucion">Solución</h3>
+### Solución
 
 Para solucionar este problema vamos a utilizar el hook `useMemo` para que la función `numbersSum` se ejecute solamente cuando cambie el estado de la lista de numeros.
 
@@ -126,7 +125,7 @@ Acá presionamos el botón que añade el número que se introdujo en el input a 
    <img src="https://github.com/nicovillamonte/code-cheat-sheet/assets/64659720/748c38e8-0f61-40fb-93f1-e4f721a8a079" alt="useMemo-button-click">
 </p>
 
-<h2 id="a-tener-en-cuenta">A tener en cuenta</h2>
+## A tener en cuenta
 
 El uso del useMemo solamente debe implementarse cuando la ejecución de la función que se memoiza es costosa. Se considera una mala práctica utilizar este Hook cuando la función es muy simple, ya que en ese caso deberíamos tener en cuenta dos cosas: 
 
@@ -134,7 +133,7 @@ El uso del useMemo solamente debe implementarse cuando la ejecución de la funci
 - Y lo segundo es que hay que tener en cuenta que el uso del `useMemo` también tiene un costo además de que 
 
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación de React](https://es.react.dev/reference/react/useMemo) para el Hook `useMemo`.
 - Otros Artículos
@@ -144,9 +143,10 @@ El uso del useMemo solamente debe implementarse cuando la ejecución de la funci
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 02/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0

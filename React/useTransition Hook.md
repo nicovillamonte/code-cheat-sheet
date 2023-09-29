@@ -4,12 +4,13 @@ El hook `useTransition` nos permite manejar la transición de un estado a otro e
 
 1. [Problema](#problema)
 2. [Sintaxis](#sintaxis)
-3. [Implementación](#implementacion)
+3. [Implementación](#implementación)
+4. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h2 id="problema">Problema</h2>
+## Problema
 
 Vamos a usar un ejemplo didáctico para entender el problema, el mismo consta de un `input` que, al escribir en él, se renderiza debajo del mismo su valor miles de veces.
 
@@ -47,7 +48,7 @@ Esto se debe a que, por defecto, todos los estados tienen una alta prioridad a l
 
 Para solucionar este problema, podemos utilizar el hook `useTransition`.
 
-<h2 id="sintaxis">Sintaxis</h2>
+## Sintaxis
 
 ```tsx
 const [isPending, startTransition] = useTransition();
@@ -59,7 +60,7 @@ El hook `useTransition` devuelve un array con dos elementos:
 - `startTransition`: función que inicia la transición.
 
 
-<h2 id="implementacion">Implementación</h2>
+## Implementación
 
 Vamos a implementar este hook en el ejemplo anterior para solucionar el problema que estabamos teniendo.
 
@@ -112,7 +113,7 @@ Si probamos el código de esta manera, entonces vamos a ver que se puede escribi
 Es importante entender que el hook `useTransition` no hace que la transición sea más rápida, sino que le da menor prioridad a la actualización del estado, por lo que no va a relentizar las partes prioritarias de la aplicación.
 
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación Oficial de React](https://react.dev/reference/react/useTransition) del hook `useTransition`.
 - [Cheat Sheet sobre el hook `useState`](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/React/useState%20Hook.md)
@@ -120,9 +121,10 @@ Es importante entender que el hook `useTransition` no hace que la transición se
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 09/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: React 18.2.0, Nodejs 18.14.0
