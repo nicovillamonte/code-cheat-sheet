@@ -6,20 +6,21 @@ Se esta utilizando a la hora de escribir ésto, Angular 16.
 
 ### Tabla de contenidos
 
-1. [Creación de un Custom Pipe](#creando-un-pipe)
+1. [Creación de un Custom Pipe](#creación-de-un-custom-pipe)
    1. [Archivo para el pipe](#archivo-para-el-pipe)
    2. [Decorador @Pipe](#decorador-pipe)
    3. [Interfaz PipeTransform](#interfaz-pipetransform)
-   4. [Método transform](#metodo-transform)
-2. [Utilizando el custom pipe](#usando-el-pipe)
+   4. [Método transform](#método-transform)
+2. [Utilizando el custom pipe](#utilizando-el-custom-pipe)
 3. [Argumentos en los Custom Pipes](#argumentos-en-los-custom-pipes)
-4. [Más información](#mas-informacion)
+4. [Más información](#más-información)
 
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
 
-<h2 id="creando-un-pipe">Creación de un Custom Pipe</h2>
+## Creación de un Custom Pipe
 
 La creación de un Custom Pipe es muy sencilla y útiles en muchos casos. Por ejemplo, si se quiere agregar una comillas a un texto para que sea como una cita, se puede realizar de la ciguiente manera:
 
@@ -61,13 +62,13 @@ También podríamos decidir qué tipo de comillas utilizar para citar el texto d
 <p>{{ text | quote:"'" }}</p>
 ```
 
-<h3 id="archivo-para-el-pipe">Archivo para el pipe</h3>
+### Archivo para el pipe
 
 ¿Qué es realmente el Pipe y en dónde vamos a crearlo? Un Pipe, internamente, es una clase que implementa una interfaz que se encarga de convertir el código que escribamos a un Pipe que Angular pueda entender. Por lo que vamos a crear un archivo para el Pipe. Para seguir buenas prácticas en la estructura de un proyecto de Angular, el archivo debería ser nombrado con el nombre del Pipe seguido de un `.pipe` y con la extensión `.ts`. Por ejemplo, si el Pipe se llama `quote`, el archivo debería ser `quote.pipe.ts`.
 
 Los archivos de Pipes se pueden almacenar en un directorio llamado `pipes` dentro de la carpeta `shared` de la aplicación si se van a compartir en toda la aplicación. Es muy común también ubicarlos en el directorio `core` del proyecto. La diferencia entre estas dos opciones es que los pipes en el directorio core generalmente son fundamentales para la lógica de negocio de la aplicación y se cargan una sola vez cuando se inicia la aplicación, mientras que los pipes en el directorio shared son más propensos a ser reutilizables en diferentes partes de la aplicación pero no son esenciales para su funcionamiento básico.
 
-<h3 id="decorador-pipe">Decorador @Pipe</h3>
+### Decorador @Pipe
 
 El decorador @Pipe es el que se encarga de convertir la clase en un Pipe. Este decorador se importa desde `@angular/core`. El mismo recibe un objeto como parámetro con una propiedad llamada `name` que es el nombre que se le va a dar al Pipe. Este nombre es el que se va a utilizar en la vista para invocar al Pipe. Por ejemplo, para que podamos utilizar el pipe de la manera en la que vimos en el ejemplo se le debe asignar el valor `quote` al atributo `name` del objeto que se le pasa al decorador.
 
@@ -90,7 +91,7 @@ import { Pipe } from '@angular/core';
 ...
 ```
 
-<h3 id="interfaz-pipetransform">Interfaz PipeTransform</h3>
+### Interfaz PipeTransform
 
 Para crear el Pipe dijimos que debíamos implementar una interfaz a la clase del mismo. Esa interfaz se llama `PipeTransform` y se importa desde `@angular/core`. Según la documentación oficial de Angular, esta es la estructura de dicha interfaz:
 
@@ -100,7 +101,7 @@ interface PipeTransform {
 }
 ```
 
-<h3 id="metodo-transform">Método transform</h3>
+### Método transform
 
 La interfaz `PipeTransform` tiene un método llamado `transform` que recibe dos parámetros. El primero es el valor que se va a transformar y el segundo es un array de argumentos que se pueden pasar al Pipe. El método `transform` debe devolver el valor transformado.
 
@@ -121,7 +122,7 @@ export class QuotePipe implements PipeTransform {
 }
 ```
 
-<h2 id="usando-el-pipe">Utilizando el custom pipe</h2>
+## Utilizando el custom pipe
 
 Para poder utilizar nuestro Custom Pipe en la aplicación de Angular, debemos declararlo en el módulo en el que lo vamos a utilizar. Por ejemplo, si lo vamos a utilizar en el módulo principal de la aplicación, el archivo `app.module.ts` debería quedar de la siguiente manera:
 
@@ -152,7 +153,7 @@ Una vez declarado el Pipe en el módulo, ya podemos utilizarlo en cualquier comp
 <p>{{ text | quote }}</p>
 ```
 
-<h2 id="argumentos-en-los-custom-pipes">Argumentos en los Custom Pipes</h2>
+## Argumentos en los Custom Pipes
 
 Además de esta funcionalidad, los Custom Pipes pueden recibir argumentos. Por ejemplo, si queremos que el Pipe `quote` reciba como argumento el tipo de comillas que se van a utilizar para citar el texto, el código del Pipe quedaría de la siguiente manera:
 
@@ -218,7 +219,7 @@ Entonces lo que se verá en la vista con el ejemplo donde se aplica el pipe como
 'HOLA COMO ESTAS'
 ```
 
-<h2 id="mas-informacion">Más información</h2>
+## Más información
 
 - Documentación de [Pipes en Angular](https://angular.io/guide/pipes)
 - Documentación de [Custom Pipes en Angular](https://angular.io/guide/pipes-custom-data-trans)
@@ -228,9 +229,10 @@ Entonces lo que se verá en la vista con el ejemplo donde se aplica el pipe como
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+## Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 13/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16

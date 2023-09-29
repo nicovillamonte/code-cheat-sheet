@@ -6,12 +6,13 @@ El contenido hijo suele ser llamado de diferentes maneras en los diferentes fram
 2. [Ng-content con selectores](#ng-content-con-selectores)
     1. [Valores opcionales](#valores-opcionales)
     2. [Uso múltiple de un selector](#uso-múltiple-de-un-selector)
-3. [Más información](#mas-informacion)
+3. [Más información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
 
-## Ng-content como contenido hijo <a id="ng-content-como-contenido-hijo"></a>
+## Ng-content como contenido hijo
 
 Los componentes en Angular pueden tener contenido hijo, es decir, que se puede pasar contenido dentro de la etiqueta de un componente, por ejemplo, si tenemos el componente `app-card`, al igual que con muchas otras etiquetas HTML, vamos a poder pasarle contenido dentro de la misma de la siguiente manera:
 
@@ -44,7 +45,7 @@ En donde pongamos la directiva `ng-content` se va a mostrar el contenido que se 
 Esto nos provee más flexibilidad a la hora de crear componentes reutilizables, ya que podemos pasarle contenido dentro de la etiqueta del componente y mostrarlo en el template del mismo de la manera que lo necesitemos.
 
 
-## Ng-content con selectores <a id="ng-content-con-selectores"></a>
+## Ng-content con selectores
 
 Otra forma de utilizar la directiva `ng-content` es pasándole un selector, de esta manera, podemos tener más de un `ng-content` en el template del componente y mostrar el contenido que se pasa dentro de la etiqueta del componente en el lugar que queramos, por ejemplo, podemos tener un componente `app-card` con la siguiente estructura:
 
@@ -72,7 +73,7 @@ Para luego llamarlo de la siguiente manera:
 
 De esta manera, el contenido que se pasa dentro de la etiqueta del componente se va a mostrar en el lugar que le indiquemos con el selector que le pasamos a la directiva `ng-content`. En este caso, el elemento con el selector `[header]` se va a mostrar al inicio de la card, el elemento con el selector `[body]` se va a mostrar segundo, y todo lo demás que no pertenezca a ninguno de los selectores se va a mostrar al final de la card.
 
-### Valores opcionales <a id="valores-opcionales"></a>
+### Valores opcionales
 
 Los selectores de `ng-content` son opcionales, es decir, que no es necesario que se pase contenido para todos los selectores que se tengan, de hecho, puede no pasarse ninguno, siguiendo con el ejemplo anterior:
 
@@ -85,7 +86,7 @@ Los selectores de `ng-content` son opcionales, es decir, que no es necesario que
 
 No llamamos al selector `[body]`, por lo tanto, el contenido no mostrará nada en el lugar en el que se encuentra el `ng-content` con dicho selector.
 
-### Uso múltiple de un selector <a id="uso-múltiple-de-un-selector"></a>
+### Uso múltiple de un selector
 
 Vimos que el orden era un factor poco importante a la hora de utilizar un componente con selectores, pero ¿qué pasaría si mezclaramos el orden de varios selectores?
 
@@ -119,16 +120,17 @@ Lo mismo en caso de que tengamos varios elementos sin etiquetas, todos se van a 
 ```
 
 
-## Más información <a id="mas-informacion"></a>
+## Más información
 
 - [Angular - Proyección de contenido](https://angular.io/guide/content-projection)
 
 
 <br>
 
-## Datos del cheat sheet <a id="cheat-sheet-data"></a>
+## Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 20/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16

@@ -1,5 +1,23 @@
 # Estructura de un proyecto Angular
 
+En este Cheat Sheet vamos a ver una opción muy viable para estructurar un proyecto profesional de frontend con el framework Angular.
+
+- [Estructura](#estructura)
+  - [Core](#core)
+  - [Data](#data)
+  - [Shared](#shared)
+  - [Layout](#layout)
+  - [Modules](#modules)
+  - [Documentation](#documentation)
+- [Fuente](#fuente)
+
+
+- [Datos del cheat sheet](#datos-del-cheat-sheet)
+
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
+
+## Estructura
+
 La estructura de un proyecto Angular idealmente se organizaría de la siguiente manera:
 
 ```
@@ -85,3 +103,4 @@ Aunque generalmente la documentación de un proyecto se incluye en el repositori
 \- Fecha: 20/07/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16

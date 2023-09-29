@@ -4,6 +4,15 @@ El helper (o ayuda) de testing es una clase que nos otorgará herramientas para 
 
 Si se quiere ver aplicado se puede analizar el [ejemplo de Signals en Angular v16](https://github.com/uqbar-project/eg-conversor-signals-angular) realizado para la materia [Algoritmos 3](https://algo3.uqbar-project.org/) de la [Universidad Nacional de San Martín (UNSAM)](https://www.unsam.edu.ar/).
 
+1. [¿Qué hacíamos antes?](#¿qué-hacíamos-antes)
+2. [Solución](#solución)
+3. [¿Cómo utilizar el Helper en los tests?](#¿cómo-utilizar-el-helper-en-los-tests)
+4. [Conclusiones](#conclusiones)
+
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
+
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
+
 ## ¿Qué hacíamos antes?
 
 Tomemos de ejemplo la funcionalidad de obtener los elementos del DOM de un componente, para lo que necesitabamos obtener de alguna manera el atributo `data-testid` del elemento para obtenerlo a mano de la siguiente manera suponiendo que el boton que queremos obtener tiene el atributo `data-testid="save-button"`:
@@ -180,9 +189,12 @@ Las cosas más importantes que nos da el realizar este tipo de helpers es:
 
 Y así podemos seguir contando, pero quedo claro que esta es una herramienta muy útil dentro del testing. En este ejemplo se utilizó con el framework de Angular, pero claramente se puede realizar esto en cada uno de los frameworks y lenguajes que se quieran testear, con diferentes funcionalidades para cada uno.
 
-### Datos del cheat sheet
+<br>
+
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 21/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16

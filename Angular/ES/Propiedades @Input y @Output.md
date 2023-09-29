@@ -3,27 +3,29 @@
 Las propiedades `@Input` y `@Output` son decoradores que nos permiten pasar datos entre componentes, de padre a hijo y de hijo a padre respectivamente. Es necesario comprender el concepto de _data binding_ en su totalidad para poder entender el funcionamiento de estas propiedades, ya que las mismas se encargan de crear atriutos personalizados para las etiquetas de componentes que pueden ser utilizados utilizando _data binding_.
 
 1. [Propiedad @Input](#propiedad-input)
-   1. [Introducción](#introduccion-input)
-   2. [Data Binding en @Input](#data-binding-en-input)
-   3. [Ejemplo didáctico](#ejemplo-didactico-1)
+   1. [Introducción](#introducción-a-input)
+   2. [Data Binding](#data-binding-en-input)
+   3. [Ejemplo didáctico](#ejemplo-didáctico-de-input)
       1. [Pasar valor fijo del padre al hijo](#pasar-valor-fijo-del-padre-al-hijo)
       2. [Enlazarlo a una variable del padre](#enlazarlo-a-una-variable-del-padre)
    4. [Problema](#problema)
 2. [Propiedad @Output](#propiedad-output)
-   1. [Introducción](#introduccion-output)
+   1. [Introducción](#introducción-a-output)
    2. [EventEmitter](#eventemitter)
-   3. [Ejemplo didáctico](#ejemplo-didactico-2)
+   3. [Ejemplo didáctico](#ejemplo-didáctico-de-output)
 3. [Usando @Input y @Output juntos](#usando-input-y-output-juntos)
-   1. [Introducción](#introduccion-input-output)
-   2. [Ejemplo didáctico](#ejemplo-didactico-3)
-4. [Más información](#mas-informacion)
+   1. [Introducción](#introducción-de-uso-doble)
+   2. [Ejemplo didáctico](#ejemplo-didáctico-de-uso-doble)
+4. [Más información](#más-información)
 
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
-<h2 id="propiedad-input">Propiedad @Input</h2>
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
 
-<h3 id="introduccion-input">Introducción</h3>
+## Propiedad @Input
+
+### Introducción a @Input
 
 La propiedad @Input es un decorador que marca un campo de la clase como propiedad de entrada. Tiene dos maneras de escribirse y es importante entender ambas para evitar confusiones:
 
@@ -59,7 +61,7 @@ En este caso, no se llamaría al atributo `propiedad` en el componente padre, si
 <hijo-component alias=valor></hijo-component>
 ```
 
-<h3 id="data-binding-en-input">Data Binding en @Input</h3>
+### Data Binding en @Input
 
 Como mencionamos anteriormente, la propiedad `@Input` nos permite utilizar _data binding_ para enlazar una variable a la propiedad del componente hijo que se sincronice con la vista en vez de ser un valor fijo como vimos hasta recién. Para ello, debemos utilizar la sintaxis de _data binding_ de Angular, que consiste en utilizar corchetes `[]`, es decir que utilizaremos [property binding](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Data%20Binding.md#property-binding). Por ejemplo, si tenemos una variable `valor` en el componente padre, podemos asignarle el valor de la siguiente manera:
 
@@ -79,11 +81,11 @@ HTML del componente padre:
 
 Lo que hará que cuando la variable `valor` cambie, la propiedad `propiedad` del componente hijo también lo haga.
 
-<h3 id="ejemplo-didactico-1">Ejemplo didáctico</h3>
+### Ejemplo didáctico de @Input
 
 Vamos a realizar un ejemplo en el que vamos a ir escalando en funcionalidad poco a poco. Inicialmente vamos a constar de un componente hijo llamado `HijoComponent` y un componente padre llamado `PadreComponent`. 
 
-<h4 id="pasar-valor-fijo-del-padre-al-hijo">Pasar valor fijo del padre al hijo</h4>
+#### Pasar valor fijo del padre al hijo
 
 Lo que queremos realizar inicialmente es mostrar en una etiqueta `h1`, dentro del componente hijo, el valor que se le pase como argumento al mismo desde el componente padre. Por ejemplo, la típica frase "Hola mundo". Para ello, vamos a utilizar la primera forma de escribir el decorador `@Input` que vimos anteriormente.
 
@@ -110,7 +112,7 @@ HTML del componente padre, en el que se llama al componente hijo y se le pasa co
 
 Si ejecutamos este simple código, vamos a ver como se ve el "Hola Mundo" en el navegador sin ningún problema. Ya hemos logrado pasar datos desde el componente padre al componente hijo utilizando la propiedad `@Input`. Ahora, vamos a agregarle un poco más de funcionalidad.
 
-<h4 id="enlazarlo-a-una-variable-del-padre">Enlazarlo a una variable del padre</h4>
+#### Enlazarlo a una variable del padre
 
 En este caso, vamos a agregar una etiqueta _input_ en el hijo para que el usuario pueda ingresar un valor y que el mismo se muestre en la etiqueta `h1` del componente hijo. Como bonús adicional, vamos a utilizar la segunda forma de escribir el decorador `@Input` que vimos anteriormente.
 
@@ -145,7 +147,7 @@ HTML del componente padre, en el que pasan dos cosas interesantes. La primera es
 
 Si ejecutamos este código, vamos a ver como el valor que ingresemos en el input se va a mostrar en la etiqueta `h1` del componente hijo. Esto quiere decir que la propiedad que creamos mediante el decorador `@Input` se enlazó correctamente con el estado del componente padre.
 
-<h3 id="problema">Problema</h3>
+### Problema
 
 Hemos logrado conectar los componentes padre e hijo en una sola dirección actualmente. La dirección `padre -> hijo` sugiere que pudimos modificar una propiedad del componentes hijo desde el comopnente padre, pero el componente hijo no puede modificar el valor de la propiedad del componente padre. Entonces, ¿qué pasaría si el componente hijo tuviera un botón que modificase el valor de la porpiedad `titulo`? ¿Cambiaría en el padre?
 
@@ -174,9 +176,9 @@ Si ejecutamos este código, vamos a ver como el valor de la propiedad `titulo` c
 
 ¿Entonces con utilizar el [binding bidireccional](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Data%20Binding.md#two-way-binding) se solucionaría el problema? No, ya que no dimos a entender al componente hijo que puede modificar un valor y hacerlo llegar al componente padre de ninguna manera, por lo que el hecho de solo intentarlo nos arrojaría un error.
 
-<h2 id="propiedad-output">Propiedad @Output</h2>
+## Propiedad @Output
 
-<h3 id="introduccion-output">Introducción</h3>
+### Introducción a @Output
 
 La propiedad `@Output` es un decorador que marca un campo de la clase como propiedad de salida. Al igual que el decorador `@Input`, se puede escribir con o sin argumento, lo que funciona de la misma manera en ambos casos.
 
@@ -212,7 +214,7 @@ HTML del componente padre:
 
 Hasta acá todo bien, pero ¿qué se hace con esa función?, ¿cuándo se ejecuta?
 
-<h3 id="eventemitter">EventEmitter</h3>
+### EventEmitter
 
 En Angular, los eventos se representan mediante la clase `EventEmitter`, que es una clase genérica que nos permite emitir eventos de cualquier tipo. En el decorador `@Output`, se utiliza siempre un valor de tipo `EventEmitter` para poder emitir eventos, ya que estamos queriendo pasar datos desde el componente hijo al componente padre cuando los mismos cambien, no tiene sentido hacerlo de otra manera.
 
@@ -238,7 +240,7 @@ HTML del componente hijo:
 
 El objeto EventEmitter tiene un método llamado `emit()` que recibe como parámetro el valor que se va a emitir. Debemos llamar a este método cada vez que queramos que el valor de la propiedad "salga" del componente hijo y llegue al componente padre. En el ejemplo anterior, se llama al método `emit()` cuando se hace click en el botón, por lo que cada vez que se haga click en el botón, se va a emitir el valor que se le pase como parámetro y el componente padre va a ejecutar la función que tenga ligada a la propiedad del componente hijo.
 
-<h3 id="ejemplo-didactico-2">Ejemplo didáctico</h3>
+### Ejemplo didáctico de @Output
 
 Vamos a realizar un nuevo ejemplo en el que utilicemos un decorador `@Output` para emitir un evento al componente padre cada vez que se superen los 10 caracteres en un _input_ del componente hijo, para que así el padre pueda mostrar un mensaje de error en consola.
 
@@ -283,9 +285,9 @@ HTML del componente padre, donde se llama al componente hijo y se le asigna la f
 ¿Que hace esto? En sencillas palabras, cada vez que el usuario escriba y haya más de 10 caracteres en el _input_ del componente hijo, se va a emitir un evento que estará enlazado a la función `funcion()` del componente padre y la ejecutará, en este caso solo mostrará un mensaje en consola.
 
 
-<h2 id="usando-input-y-output-juntos">Usando @Input y @Output juntos</h2>
+## Usando @Input y @Output juntos
 
-<h3 id="introduccion-input-output">Introducción</h3>
+### Introducción de uso doble
 
 Hasta ahora, vimos como utilizar los decoradores `@Input` y `@Output` por separado, pero ¿qué pasaría si los utilizamos juntos? ¿Podríamos pasar el mismo dato desde el componente padre al componente hijo y viceversa? La respuesta es sí, y tiene mucho que ver con el _binding bidireccional_ que generalmente utilizamos con la directiva de Angular `ngModel`.
 
@@ -323,7 +325,7 @@ Angular entiende que ambas propiedades, una de entrada y otra de salida, están 
 <hijo-component [(propiedad)]="variable"></hijo-component>
 ```
 
-<h3 id="ejemplo-didactico-3">Ejemplo didáctico</h3>
+### Ejemplo didáctico de uso doble
 
 Siguiendo con el ejemplo del _input_ del componente padre que maneja el texto del componente hijo que vimos cuando explicamos el decorador `@Input`, vamos a agregarle la posibilidad de que el componente hijo pueda modificar el valor del _input_ del componente padre mediante un botón.
 
@@ -373,16 +375,17 @@ Esto no es nada nuevo, de hecho lo podemos realizar sin necesidad del `@Output`.
 Ahora, si presionamos el botón, vemos que el componente hijo tiene la capacidad de modificar el valor del _input_ del componente padre mediante el evento que emite. Es decir, ahora se puede modificar el valor del padre al hijo y del hijo al padre (El último mediante eventos).
 
 
-<h2 id="mas-informacion">Más información</h2>
+## Más información
 
 - [Documentación de Angular - Inputs Outputs](https://angular.io/guide/inputs-outputs)
 - [Otros Cheat Sheets de Angular](https://github.com/nicovillamonte/code-cheat-sheet/tree/main/Angular/ES)
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 16/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16

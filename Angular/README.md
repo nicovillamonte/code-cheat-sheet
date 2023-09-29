@@ -12,3 +12,5 @@
 - [Custom Pipes](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Custom%20Pipes.md)
 - [Signals V16](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Signals.md)
 - [Propiedades @Input y @Output](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Propiedades%20%40Input%20y%20%40Output.md)
+- [Contenido Hijo en un Componente - NgContent](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Contenido%20Hijo%20en%20un%20Componente%20-%20NgContent.md)
+- [Routing](https://github.com/nicovillamonte/code-cheat-sheet/blob/main/Angular/ES/Routing.md)

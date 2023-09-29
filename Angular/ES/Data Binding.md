@@ -6,17 +6,19 @@ En el momento en el que se esta escribiendo ésto, Angular esta en su versión 1
 
 ### Tabla de contenidos
 
-1. [Tipos de Data Binding](#introduccion)
+1. [Tipos de Data Binding](#tipos-de-data-binding)
 2. [Interpolation](#interpolation)
 3. [Property Binding](#property-binding)
    1. [Property Binding vs Interpolation](#property-binding-vs-interpolation)
 4. [Event Binding](#event-binding)
 5. [Two-Way Binding](#two-way-binding)
-6. [Más información](#mas-informacion)
+6. [Más información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
-<h2 id="introduccion">Tipos de Data Binding</h2>
+> Al momento de escribirse este Cheat Sheet, Angular se encuentra en su versión 16. Por lo que debe estar ateneto a posibles cambios en futuras versiones.
+
+## Tipos de Data Binding
 
 Existen 4 formas de hacer data binding en Angular:
 
@@ -25,7 +27,7 @@ Existen 4 formas de hacer data binding en Angular:
 - Event Binding
 - Two-Way Binding
 
-<h2 id="interpolation">Interpolation</h2>
+## Interpolation
 
 **Modelo → Vista**
 
@@ -65,8 +67,7 @@ Otro ejemplo de dónde se puede utilizar la interpolación es en el valor de un 
 
 Vemos que su uso es muy simple y que es muy útil para mostrar datos en la vista. Cualquier cosa que se pueda hacer en una expresión de JavaScript, se puede hacer en una interpolación, con la importancia de que debe devolver un valor para mostrarlo en la vista.
 
-
-<h2 id="property-binding">Property Binding</h2>
+## Property Binding
 
 **Modelo → Vista**
 
@@ -90,7 +91,7 @@ export class AppComponent {
 
 Al igual que el data binding por interpolación, el property binding consiste en una sola dirección, desde el **modelo** hacia la **vista**.
 
-<h3 id="property-binding-vs-interpolation">Property Binding vs Interpolation</h3>
+### Property Binding vs Interpolation
 
 La diferencia entre el property binding y la interpolación es que el property binding se utiliza para enlazar una propiedad de un elemento del HTML con una variable del componente, mientras que la interpolación se utiliza para mostrar datos en la vista.
 
@@ -110,7 +111,7 @@ Sin embargo, la primera es la forma correcta de hacerlo, por varias razones, ent
 Si se quiere saber más sobre la diferencia entre estos dos ejemplos, es recomendable que lean el artículo [_Binding a propiedad vs interpolación de strings, en Angular_](https://desarrolloweb.com/articulos/binding-propiedad-vs-interpolacion-strings.html)
 
 
-<h2 id="event-binding">Event Binding</h2>
+## Event Binding
 
 **Modelo ← Vista**
 
@@ -137,7 +138,7 @@ export class AppComponent {
 Al igual que el data binding por interpolación y por property binding, el event binding consiste en una sola dirección, pero esta vez desde la **vista** hacia el **modelo**. Es decir, el usuario cambiará el valor de los elementos de la vista y el modelo se actualizará según ese cambio.
 
 
-<h2 id="two-way-binding">Two-Way Binding</h2>
+## Two-Way Binding
 
 **Modelo ⟷ Vista**
 
@@ -188,7 +189,7 @@ Si ejecutamos ese código, podemos ver que si escribimos algo en el Input, al ha
 El two-way binding es muy útil, sin embargo hay que utilizarlo cuando realmente sea necesario, ya que tiene un costo elevado a comparación con los otros tipos de data binding. Además de que debemos saber evitar funcionalidad que no queremos en nuestro código.
 
 
-<h2 id="mas-informacion">Más información</h2>
+## Más información
 
 - [Documentación de Angular - Binding Syntax](https://angular.io/guide/binding-syntax)
 - [Documentación de Angular - Two Way Binding](https://angular.io/guide/two-way-binding)
@@ -196,9 +197,10 @@ El two-way binding es muy útil, sin embargo hay que utilizarlo cuando realmente
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 08/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Angular V16
