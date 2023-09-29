@@ -144,3 +144,4 @@ Para ver como quedó el código final y modificarlo para realizar pruebas pueden
 \- Fecha: 22/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: HTML5, CSS3, Visual Studio Code 1.82.2, Emmet 2.4.6

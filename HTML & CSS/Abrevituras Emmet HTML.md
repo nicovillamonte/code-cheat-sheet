@@ -10,37 +10,37 @@ En este Cheat Sheet vamos a ver algunas abreviaturas importantes a tener en cuen
 
 [**HTML**](#html)
 
-1. [Estructura básica](#estructura-basica)
+1. [Estructura básica](#estructura-básica)
 2. [Etiquetas](#etiquetas)
 3. [Atributos](#atributos)
-    1. [Sin valor](#atributos-sin-valor)
-    2. [Con valor](#atributos-con-valor)
-    3. [Múltiples atributos](#atributos-multiples)
+    1. [Sin valor](#sin-valor)
+    2. [Con valor](#con-valor)
+    3. [Múltiples atributos](#múltiples-atributos)
 4. [Clases](#clases)
-    1. [Múltiples clases](#clases-multiples)
-5. [ID](#ids)
-6. [Texto dentro de la etiqueta](#text-content)
-7. [Contenido de la etiqueta](#tag-children)
-    1. [Múltiples etiquetas anidadas](#tag-children-anid)
-    2. [Múltiples etiquetas hermanas](#tag-children-add)
-8. [Multiplicación de etiquetas](#tag-multiplication)
-9. [Agrupamiento](#groups)
-    1. [Multiplicación de grupos](#groups-multiplication)
-10. [Numeración de items](#numeration)
-    1. [Generador de Lorem Ipsum](#lorem-ipsum)
-    2. [Generador de Lorem Ipsum con cantidad de palabras](#lorem-ipsum-words)
-11. [Ejemplos](#examples)
-    1.  [Formulario](#example-formulario)
-    2.  [Lista](#example-list)
-    3.  [Tabla](#example-table)
-12. [Más Información](#mas-info)
+    1. [Múltiples clases](#múltiples-clases)
+5. [ID](#id)
+6. [Texto dentro de la etiqueta](#texto-dentro-de-la-etiqueta)
+7. [Contenido de la etiqueta](#contenido-de-la-etiqueta)
+    1. [Múltiples etiquetas anidadas](#múltiples-etiquetas-anidadas)
+    2. [Múltiples etiquetas hermanas](#múltiples-etiquetas-hermanas)
+8. [Multiplicación de etiquetas](#multiplicación-de-etiquetas)
+9. [Agrupamiento](#agrupamiento)
+    1. [Multiplicación de grupos](#multiplicación-de-grupos)
+10. [Numeración de items](#numeración-de-items)
+    1. [Generador de Lorem Ipsum](#generador-de-lorem-ipsum)
+    2. [Generador de Lorem Ipsum con cantidad de palabras](#generador-de-lorem-ipsum-con-cantidad-de-palabras)
+11. [Ejemplos](#ejemplos)
+    1.  [Formulario](#formulario)
+    2.  [Lista](#lista)
+    3.  [Tabla](#tabla)
+12. [Más Información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 
-<h1 id="html">HTML</h1>
+# HTML
 
-<h2 id="estructura-basica">Estructura básica</h2>
+## Estructura básica
 
 Para generar la estructura básica de un documento HTML, podemos utilizar la abreviatura `!` y luego presionar la tecla TAB para autocompletar el código:
 
@@ -66,7 +66,7 @@ Para generar la estructura básica de un documento HTML, podemos utilizar la abr
 </html>
 ```
 
-<h2 id="etiquetas">Etiquetas</h2>
+## Etiquetas
 
 Para generar una etiqueta HTML, podemos escribir el nombre de la etiqueta y luego presionar la tecla TAB para autocompletar el código:
 
@@ -82,9 +82,9 @@ div
 <div></div>
 ```
 
-<h2 id="atributos">Atributos</h2>
+## Atributos
 
-<h3 id="atributos-sin-valor">Sin valor</h3>
+### Sin valor
 
 Para generar un atributo HTML, podemos escribir el nombre del atributo entre corchetes luego de la etiqueta en la que se va a aplicar:
 
@@ -102,7 +102,7 @@ div[title]
 
 Veremos que al autocompletarse nos dejará el foco de escritura dentro de las comillas del atributo, para que podamos escribir el valor del mismo.
 
-<h3 id="atributos-con-valor">Con valor</h3>
+### Con valor
 
 Para generar un atributo HTML con un valor, podemos escribir el nombre del atributo entre corchetes luego de la etiqueta en la que se va a aplicar, y luego escribir el valor del atributo entre comillas:
 
@@ -118,7 +118,7 @@ div[title="Título"]
 <div title="Título"></div>
 ```
 
-<h3 id="atributos-multiples">Múltiples atributos</h3>
+### Múltiples atributos
 
 Para generar múltiples atributos, los mismos deben ser escritos en el mismo corchete y separados por espacios:
 
@@ -134,7 +134,7 @@ div[title="Título" id="id"]
 <div title="Título" id="id"></div>
 ```
 
-<h2 id="clases">Clases</h2>
+## Clases
 
 Para generar una clase en una etiqueta HTML, podemos escribir el nombre de la clase luego de la etiqueta y anteponer un punto:
 
@@ -156,7 +156,7 @@ Las etiquetas div tienen la peculiaridad de que si no se especifica el nombre de
 .nombre-clase
 ```
 
-<h3 id="clases-multiples">Múltiples clases</h3>
+### Múltiples clases
 
 Para generar múltiples clases, las mismas deben ser separadas por puntos luego de la etiqueta:
 
@@ -172,7 +172,7 @@ div.nombre-clase1.nombre-clase2
 <div class="nombre-clase1 nombre-clase2"></div>
 ```
 
-<h2 id="ids">ID</h2>
+## ID
 
 Para generar un ID en una etiqueta HTML, podemos escribir el nombre del ID luego de la etiqueta y anteponer un numeral:
 
@@ -196,7 +196,7 @@ Al igual que las clases, si no se especifica el nombre de la etiqueta, se asume 
 #nombre-id
 ```
 
-<h2 id="text-content">Texto dentro de la etiqueta</h2>
+## Texto dentro de la etiqueta
 
 Para generar texto dentro de una etiqueta HTML, podemos escribir el texto encerrado entre llaves luego de la etiqueta:
 
@@ -212,7 +212,7 @@ div{Texto}
 <div>Texto</div>
 ```
 
-<h2 id="tag-children">Contenido de la etiqueta</h2>
+## Contenido de la etiqueta
 
 Para generar otras etiquetas dentro de una etiqueta HTML, podemos escribir el contenido luego de la etiqueta y anteponer un signo mayor:
 
@@ -230,7 +230,7 @@ div>p
 </div>
 ```
 
-<h3 id="tag-children-anid">Múltiples etiquetas anidadas</h3>
+### Múltiples etiquetas anidadas
 
 Para generar múltiples etiquetas anidadas dentro de una etiqueta HTML, las mismas deben ser separadas por signos mayores:
 
@@ -250,7 +250,7 @@ div>p>span
 </div>
 ```
 
-<h3 id="tag-children-add">Múltiples etiquetas hermanas</h3>
+### Múltiples etiquetas hermanas
 
 Para generar múltiples etiquetas hermanas dentro de una etiqueta HTML, las mismas deben ser separadas por signos de la operación suma:
 
@@ -269,7 +269,7 @@ div>p+span
 </div>
 ```
 
-<h2 id="tag-multiplication">Multiplicación de etiquetas</h2>
+## Multiplicación de etiquetas
 
 Para generar múltiples etiquetas anidadas o hermanas, podemos escribir el número de veces que se va a repetir la etiqueta con un asterisco y luego presionar la tecla TAB para autocompletar el código:
 
@@ -289,7 +289,7 @@ div>p*3
 </div>
 ```
 
-<h2 id="groups">Agrupamiento</h2>
+## Agrupamiento
 
 Los parentesis permiten agrupar abreviaciones para que se expandan juntas:
 
@@ -323,7 +323,7 @@ Si hubiesemos hecho los mismo sin agrupamient, es decir, que la abreviación emm
 </header>
 ```
 
-<h3 id="groups-multiplication">Multiplicación de grupos</h3>
+### Multiplicación de grupos
 
 También podemos multiplicar el grupo de etiquetas:
 
@@ -342,7 +342,7 @@ También podemos multiplicar el grupo de etiquetas:
 <span></span>
 ```
 
-<h2 id="numeration">Numeración de items</h2>
+## Numeración de items
 
 El símbolo $ nos permite numerar los items de una abreviación. Por ejemplo, si queremos hacer varios items con diferentes clases, podemos hacer lo siguiente:
 
@@ -367,7 +367,7 @@ ul>li.item$*3
 
 Existen muchos otros modificadores para esta abrieviatura, lo que se puede ver en la [documentación oficial de la numeración de items en Emmet](https://docs.emmet.io/abbreviations/syntax/#item-numbering).
 
-<h2 id="lorem-ipsum">Generador de Lorem Ipsum</h2>
+## Generador de Lorem Ipsum
 
 Con la abreviación Lorem se puede generar texto de Lorem Ipsum. Vamos a demostrarlo con una etiqueta `p`:
 
@@ -383,7 +383,7 @@ p>lorem
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa dicta quaerat, consequuntur, soluta, eaque unde nam doloremque distinctio aliquid dolorum adipisci eum quidem aut cum repellat! Ratione adipisci repudiandae quibusdam.</p>
 ```
 
-<h3 id="lorem-ipsum-words">Generador de Lorem Ipsum con cantidad de palabras</h3>
+### Generador de Lorem Ipsum con cantidad de palabras
 
 Se puede añadir un número luego de la abreviación `lorem` para indicar la cantidad de palabras que se quieren generar:
 
@@ -400,9 +400,9 @@ p>lorem10
 ```
 
 
-<h1 id="examples">Ejemplos</h1>
+# Ejemplos
 
-<h2 id="example-formulario">Formulario</h2>
+## Formulario
 
 **Abreviación**:
 
@@ -424,7 +424,7 @@ form>input[type="text" name="nombre"]+input[type="text" name="apellido"]+input[t
 </form>
 ```
 
-<h2 id="example-list">Lista</h2>
+## Lista
 
 **Abreviación**:
 
@@ -442,7 +442,7 @@ ul>li.item$*3
 </ul>
 ```
 
-<h2 id="example-table">Tabla</h2>
+## Tabla
 
 **Abreviación**:
 
@@ -481,16 +481,17 @@ table>thead>tr>th*3+tbody>tr*3>td{item$}*3
 </table>
 ```
 
-<h2 id="mas-info">Más Información</h2>
+## Más Información
 
 - [Documentación oficial de Emmet](https://docs.emmet.io/)
 
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 05/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: HTML5, CSS3, Visual Studio Code 1.82.2, Emmet 2.4.6

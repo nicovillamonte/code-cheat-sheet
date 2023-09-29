@@ -3,18 +3,18 @@
 Las pseudo-clases y pseudo-elementos son selectores utilizados para darle estilos a elementos partiendo de un estado o posición específica. Son muy útiles y muy utilizados. Estos dos tipos de selectores no son sinónimos, aunque se parezcan en su sintaxis. La diferencia, en resumidas palabras, es que las pseudo-clases se utilizan para darle estilos a elementos partiendo de un estado específico, mientras que los pseudo-elementos se utilizan para darle estilos a partes específicas de un elemento.
 
 1. [Pseudo-clases](#pseudo-clases)
-   1. [Pseudo-clases más utilizadas](#pseudo-clases-utilizadas)
-   2. [Ejemplo de pseudo-clases](#ejemplo-pseudo-clases)
-   3. [Más Pseudo-clases](#mas-pseudo-clases)
+   1. [Pseudo-clases más utilizadas](#pseudo-clases-más-utilizadas)
+   2. [Ejemplo de pseudo-clases](#ejemplo-de-pseudo-clases)
+   3. [Más Pseudo-clases](#más-pseudo-clases)
 2. [Pseudo-elementos](#pseudo-elementos)
-   1. [Pseudo-elementos más utilizados](#pseudo-elementos-utilizados)
-   2. [Ejemplo de pseudo-elementos](#ejemplo-pseudo-elementos)
-   3. [Más Pseudo-elementos](#mas-pseudo-elementos)
-3. [Más información](#mas-info)
+   1. [Pseudo-elementos más utilizados](#pseudo-elementos-más-utilizados)
+   2. [Ejemplo de pseudo-elementos](#ejemplo-de-pseudo-elementos)
+   3. [Más Pseudo-elementos](#más-pseudo-elementos)
+3. [Más información](#más-información)
 
-- [Datos del cheat sheet](#cheat-sheet-data)
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
-## Pseudo-clases <span id="pseudo-clases"></span>
+## Pseudo-clases
 
 Las pseudo-clases se utilizan para darle estilos a elementos partiendo de un estado específico que puedan tener los mismos. Son representados por dos puntos `:` seguidos del nombre de la pseudo-clase. Por ejemplo, si queremos que al pasar el cursor por encima de un elemento, los estilos del mismo cambien, entonces se debe utilizar una pseudoclase en el css del elemento.
 
@@ -28,7 +28,7 @@ a:hover {
 En este ejemplo, cuando el usuario pase el cursor por encima de un elemento `a`, el color del texto del mismo cambiará a rojo. Cuando no este el cursor por encima del elemento, el color del texto volverá a ser el que tenía antes.
 
 
-### Pseudo-clases más utilizadas <span id="pseudo-clases-utilizadas"></span>
+### Pseudo-clases más utilizadas
 
 Los posibles valores **más utilizados** que puede tomar una pseudo-clase son:
 
@@ -40,7 +40,7 @@ Los posibles valores **más utilizados** que puede tomar una pseudo-clase son:
 - `:not()`: Se aplica cuando el elemento no cumple con la condición que se le pasa como parámetro (Solo permite CSS).
 - `:checked`: Se aplica cuando el elemento está seleccionado, como por ejemplo un checkbox.
 
-### Ejemplo de pseudo-clases <span id="ejemplo-pseudo-clases"></span>
+### Ejemplo de pseudo-clases
 
 Veremos a continuación algunos ejemplos de lo que se puede realizar con las pseudoclases anteriormente mencionadas:
 
@@ -110,7 +110,7 @@ input[type="checkbox"]:checked {
 ```
 
 
-### Más Pseudo-clases <span id="mas-pseudo-clases"></span>
+### Más Pseudo-clases
 
 Estas son todas las pseudoclases existentes hasta el día de la fecha en la que se escribió este Cheat Sheet:
 
@@ -157,7 +157,7 @@ Estas son todas las pseudoclases existentes hasta el día de la fecha en la que 
 Hay que tener en cuenta que existen muchas más pseudo-clases si se escarba bien en la [documentiación de pseudo-clases de css](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
 
 
-## Pseudo-elementos <span id="pseudo-elementos"></span>
+## Pseudo-elementos
 
 Los pseudo-elementos se utilizan para darle estilos a partes específicas de un elemento. Son representados por dos puntos `::` seguidos del nombre del pseudo-elemento. Por ejemplo, si queremos que la primer palabra del texto de un elemento tenga un color rojo, entonces se debe utilizar un pseudo-elemento en el css del elemento.
 
@@ -176,7 +176,7 @@ En este ejemplo, la primer letra del texto del elemento tendrá un color rojo. E
 
 > Los pseudo-elementos pueden utilizarse con solamente un `:` en vez de `::`, pero no es lo recomendable porque la idea es que se utilicen con dos puntos para diferenciarlos de las pseudo-clases.
 
-### Pseudo-elementos más utilizados <span id="pseudo-elementos-utilizados"></span>
+### Pseudo-elementos más utilizados
 
 Los posibles valores **más utilizados** que puede tomar un pseudo-elemento son:
 
@@ -187,7 +187,7 @@ Los posibles valores **más utilizados** que puede tomar un pseudo-elemento son:
 - `::selection`: Se aplica a la parte del elemento que el usuario selecciona.
 - `::placeholder`: Se aplica al placeholder de un input.
 
-### Ejemplo de pseudo-elementos <span id="ejemplo-pseudo-elementos"></span>
+### Ejemplo de pseudo-elementos
 
 Veremos a continuación algunos ejemplos de lo que se puede realizar con los pseudo-elementos anteriormente mencionados:
 
@@ -242,7 +242,7 @@ input::placeholder {
 }
 ```
 
-### Más Pseudo-elementos <span id="mas-pseudo-elementos"></span>
+### Más Pseudo-elementos
 
 Según la documentación de css, los siguientes son todos los pseudo-elementos existentes hasta el día de la fecha en la que se escribió este Cheat Sheet:
 
@@ -261,16 +261,17 @@ Según la documentación de css, los siguientes son todos los pseudo-elementos e
 Sin embargo, al igual que en las pseudo-clases, hay que tener en cuenta que existen algunos más. Por ejemplo, el pseudo-elemento `::webkit-scrollbar` y sus derivados se utilizan para darle estilos a los scrollbars de los elementos. Para poder encontrarlos hay que escarbar un poco más a fondo en la [documentación de pseudo-elementos de css](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 
 
-## Más información <span id="mas-info"></span>
+## Más información
 
 - [Documentación oficial de Pseudo-clases](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
 - [Documentación oficial de Pseudo-elementos](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements)
 
 <br>
 
-<h3 id="cheat-sheet-data">Datos del cheat sheet</h3>
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 17/09/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: HTML5, CSS3, Visual Studio Code 1.82.2, Emmet 2.4.6
