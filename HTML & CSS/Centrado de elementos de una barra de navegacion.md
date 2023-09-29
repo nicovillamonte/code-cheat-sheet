@@ -138,7 +138,7 @@ Para ver como quedó el código final y modificarlo para realizar pruebas pueden
 
 <br>
 
-### Datos del cheat sheet
+### Datos del Cheat Sheet
 
 \- Autor: Nicolás Villamonte <br>
 \- Fecha: 22/08/2023 <br>

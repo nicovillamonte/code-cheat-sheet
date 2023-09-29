@@ -4,6 +4,16 @@ La serialización y deserialización no es algo difícil de lograr la mayoría d
 
 Sin embargo, cuando se utiliza el patrón de diseño Strategy, la serialización y deserialización se vuelve un poco más complicada, ya que dentro del strategy se esconde el tipo de objeto que se está utilizando.
 
+1. [Ejemplo](#ejemplo)
+2. [Solución](#solución)
+    1. [Modelo](#modelo)
+    2. [Mapa de los tipos de vehículos](#mapa-de-los-tipos-de-vehículos)
+    3. [Serialización](#serialización)
+    4. [Deserialización](#deserialización)
+3. [Otras cosas a tener en cuenta](#otras-cosas-a-tener-en-cuenta)
+
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
+
 > Se puede ver aplicada una solución en el [ejemplo de serialización con Strategy en Kotlin](https://github.com/nicovillamonte/eg-strategy-serialization-kotlin) para la materia Algoritmos 2 de la [Universidad de San Martin (UNSAM)](https://www.unsam.edu.ar/).
 
 ## Ejemplo
@@ -126,3 +136,4 @@ Por lo que esto es solamente la explicación de cómo se puede llegar a realizar
 \- Fecha: 22/08/2023 <br>
 \- Email: nicovillamonte@gmail.com <br>
 \- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Kotlin 1.8.10, Gradle 7.4.2
