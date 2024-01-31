@@ -68,3 +68,11 @@ REPORT SECTION.
 SCREEN SECTION.
 ```
 
+
+
+
+LINKS PARA SEGUIR
+
+https://www.programacionfacil.org/cursos/cobol/capitulo_2_identification_division.html
+
+https://www.geeksforgeeks.org/cobol-divisions/
