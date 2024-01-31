@@ -284,9 +284,10 @@ Además de las condiciones de tipado, podemos crear nuestras propias condiciones
 
 > No confundir las clases de Cobol con las clases de los lenguajes de programación orientados a objetos.
 
-Las clases se definen en la sección `CONFIGURATION SECTION` dentro de `SPECIAL-NAMES`. A continuación se muestra un ejemplo de cómo se definen las clases y cómo se utilizan.
+Las clases se definen en la división `ENVIRONMENT DIVISION` sección `CONFIGURATION SECTION` dentro de `SPECIAL-NAMES`. A continuación se muestra un ejemplo de cómo se definen las clases y cómo se utilizan.
 
 ```cobol
+ENVIRONMENT DIVISION.
 CONFIGURATION SECTION.
 SPECIAL-NAME.
     CLASS UPPER-CASE IS "A" THRU "Z".
