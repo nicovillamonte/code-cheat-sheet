@@ -784,4 +784,59 @@ DISPLAY FUNCTION YEAR-TO-YYYY(56,30). *> 000001956
 
 ## Funciones Financieras
 
-...
+### ANNUITY
+
+La función `ANNUITY` devuelve un valor numérico que aproxima la relación entre una anualidad pagada al final de cada período, para un número determinado de períodos, a una tasa de interés determinada, y un valor inicial de uno.
+
+Argumentos:
+- Tasa de interés.
+- Número de períodos.
+
+
+```cobol
+DISPLAY FUNCTION ANNUITY(0, 4).
+```
+
+Resultado:
+
+```
+0000000.25
+```
+
+
+Cuando el valor del argumento 1 es cero, el valor devuelto por la función es la aproximación de:
+
+```
+1 / argumento-2
+```
+
+Cuando el valor del argumento 1 no es cero, el valor de la función es la aproximación de:
+
+```
+argumento-1 / (1 - (1 + argumento-1 ) ** (- argumento-2 ))
+```
+
+### PRESENT-VALUE
+
+La función `PRESENT-VALUE` devuelve un valor que se aproxima al valor presente de una serie de montos futuros de fin de período especificados a una tasa de descuento también especificada.
+
+Argumentos:
+- Tasa de descuento. Debe ser numérico.
+- Serie de montos futuros de fin de período. Deben ser numéricos.
+
+```cobol
+DISPLAY FUNCTION PRESENT-VALUE(0.1, 100, 200, 300).
+```
+
+Resultado:
+
+```
+481.5927873779...
+```
+
+### Resumen de Funciones Financieras
+
+```cobol
+DISPLAY FUNCTION ANNUITY(0, 4).                       *> 0000000.25
+DISPLAY FUNCTION PRESENT-VALUE(0.1, 100, 200, 300).   *> 481.5927873779...
+```
