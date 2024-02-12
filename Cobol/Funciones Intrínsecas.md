@@ -840,3 +840,262 @@ Resultado:
 DISPLAY FUNCTION ANNUITY(0, 4).                       *> 0000000.25
 DISPLAY FUNCTION PRESENT-VALUE(0.1, 100, 200, 300).   *> 481.5927873779...
 ```
+
+## Funciones de Manejo de Caracteres
+
+### CHAR
+
+La función `CHAR` retorna el carácter que corresponde a un número ASCII.
+
+Argumentos:
+- Número entero que representa el carácter ASCII. Valores desde 1 hasta 256.
+
+```cobol
+DISPLAY FUNCTION CHAR(66).
+```
+
+> Los valores ASCII en COBOL van desde 1 hasta 256, no del 0 al 255 como en otros lenguajes. Por lo tanto, siempre que se quiera un simbolo ASCII, se le debe sumar 1 al valor que se quiere obtener.
+
+
+Resultado:
+
+```
+A
+```
+
+### CONCATENATE
+
+La función `CONCATENATE` retorna la concatenación de dos o más cadenas.
+
+Argumentos:
+- Cadena 1.
+- Cadena 2.
+- _Opcional_: Cadena 3, Cadena 4, ..., Cadena n.
+
+```cobol
+DISPLAY FUNCTION CONCATENATE("Hola"," ","mundo","!"," Como estas?").
+```
+
+Resultado:
+
+```
+Hola mundo! Como estas?
+```
+
+### LENGTH
+
+La función `LENGTH` retorna la longitud de una cadena.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION LENGTH("Hola mundo!").
+```
+
+Resultado:
+
+```
+11
+```
+
+Lo importante de esta función es entender que si le pasamos una variable en lugar de una cadena directamente, nos retornará la longitud en memoria que ocupa la variable, no la longitud de la cadena que contiene.
+
+```cobol
+77  CADENA  PIC X(15) VALUE "Hola mundo!".
+
+DISPLAY FUNCTION LENGTH(CADENA).
+```
+
+Resultado:
+
+```
+15
+```
+
+### LOWER-CASE
+
+La función `LOWER-CASE` retorna la cadena en minúsculas.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION LOWER-CASE("Hola mundo!").
+```
+
+Resultado:
+
+```
+hola mundo!
+```
+
+### NATIONAL-OF
+
+BORRARLA
+
+### ORD
+
+La función `ORD` retorna el valor ASCII de un carácter.
+
+Argumentos:
+- Carácter.
+
+```cobol
+DISPLAY FUNCTION ORD("A").
+```
+
+Resultado:
+
+```
+66
+```
+
+### ORD-MAX
+
+La función `ORD-MAX` retorna la posición del valor ASCII máximo de una lista de caracteres.
+
+Argumentos:
+- Carácter 1.
+- Carácter 2.
+- _Opcional_: Carácter 3, Carácter 4, ..., Carácter n.
+
+```cobol
+DISPLAY FUNCTION ORD-MAX("H","Z","A").
+```
+
+Resultado:
+
+```
+2
+```
+
+En este caso el valor de "Z" es el mayor, por lo que retorna 2 que es la posición de "Z" en la lista que se le pasó.
+
+### ORD-MIN
+
+La función `ORD-MIN` retorna la posición del valor ASCII mínimo de una lista de caracteres.
+
+Argumentos:
+- Carácter 1.
+- Carácter 2.
+- _Opcional_: Carácter 3, Carácter 4, ..., Carácter n.
+
+```cobol
+DISPLAY FUNCTION ORD-MIN("H","Z","A").
+```
+
+Resultado:
+
+```
+3
+```
+
+En este caso el valor de "A" es el menor, por lo que retorna 3 que es la posición de "A" en la lista que se le pasó.
+
+### REVERSE
+
+La función `REVERSE` retorna la cadena invertida.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION REVERSE("Hola mundo!").
+```
+
+Resultado:
+
+```
+!odnum aloH
+```
+
+### STORED-CHAR-LENGTH
+
+La función `STORED-CHAR-LENGTH` retorna la longitud de una cadena almacenada.
+
+Argumentos:
+- Cadena.
+
+```cobol
+77  CADENA  PIC X(15) VALUE "Hola mundo!".
+
+DISPLAY FUNCTION STORED-CHAR-LENGTH("Hola mundo!").
+```
+
+Resultado:
+
+```
+11
+```
+
+### SUBSTITUTE
+
+La función `SUBSTITUTE` retorna la cadena con todas las ocurrencias de un carácter reemplazadas por otro.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION SUBSTITUTE("Hola mundo!","o","0").
+```
+
+Resultado:
+
+```
+H0la mund0!
+```
+
+### SUBSTITUTE-CASE
+
+La función `SUBSTITUTE-CASE` retorna la cadena con todas las ocurrencias de un carácter reemplazadas por otro, sin importar si son mayúsculas o minúsculas.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION SUBSTITUTE-CASE("Mi gatita Mimi esta mauyando.","m","l").
+```
+
+Resultado:
+
+```
+li gatita lili esta lauyando.
+```
+
+### TRIM
+
+La función `TRIM` retorna la cadena sin espacios en blanco al principio y al final.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION TRIM("    Hola mundo!    ").
+```
+
+Resultado:
+
+```
+Hola mundo!
+```
+
+### UPPER-CASE
+
+La función `UPPER-CASE` retorna la cadena en mayúsculas.
+
+Argumentos:
+
+```cobol
+DISPLAY FUNCTION UPPER-CASE("Hola mundo!").
+```
+
+Resultado:
+
+```
+HOLA MUNDO!
+```
+
+### Resumen de Funciones de Manejo de Caracteres
+
+```cobol
