@@ -2,7 +2,16 @@
 
 Las funciones intrínsecas son funciones integradas en COBOL y que nos permiten realizar operaciones matemáticas, de manipulación de cadenas, de fechas, entre otras sin la necesidad de codificarlas uno mismo. A continuación, se detallará una lista de las funciones intrínsecas más comunes en COBOL y su clasificación.
 
-1. kk
+1. [Cómo se utilizan las Funciones Intrínsecas](#cómo-se-utilizan-las-funciones-intrínsecas)
+2. [Tipos de Funciones Intrínsecas](#tipos-de-funciones-intrínsecas)
+3. [Todas las Funciones Intrínsecas](#todas-las-funciones-intrínsecas)
+   1. [Funciones Matemáticas](#funciones-matemáticas)
+   2. [Funciones de Fecha y Hora](#funciones-de-fecha-y-hora)
+   3. [Funciones Financieras](#funciones-financieras)
+   4. [Funciones de Manejo de Caracteres](#funciones-de-manejo-de-caracteres)
+   5. [Funciones Estadísticas](#funciones-estadísticas)
+
+- [Datos Del Cheat Sheet](#datos-del-cheat-sheet)
 
 # Cómo se utilizan las Funciones Intrínsecas
 
@@ -41,41 +50,41 @@ Las funciones intrínsecas de COBOL se dividen en 6 categorías según su finali
 
 A continuación, se detallará una tabla de todas las funciones intrínsecas de COBOL y su clasificación.
 
-| Matemáticas | Fecha y Hora                | Financieras   | Manejo de Caracteres | Estadísticas       |
-| ----------- | --------------------------- | ------------- | -------------------- | ------------------ |
-| ABS         | COMBINED-DATETIME           | ANNUITY       | CHAR                 | MAX                |
-| ACOS        | CURRENT-DATE                | PRESENT-VALUE | CONCATENATE          | MEAN               |
-| ASIN        | DATE-OF-INTEGER             |               | DISPLAY-OF           | MEDIAN             |
-| ATAN        | DATE-TO-YYYYMMDD            |               | LENGTH               | MIDRANGE           |
-| COS         | DAY-OF-INTEGER              |               | LENGTH-AN            | MIN                |
-| FACTORIAL   | DAY-TO-YYYYDDD              |               | LOWER-CASE           | RANGE              |
-| LOG         | FORMATTED-CURRENT-DATE      |               | NATIONAL-OF          | STANDARD-DEVIATION |
-| LOG10       | FORMATTED-DATE              |               | ORD                  | SUM                |
-| MOD         | FORMATTED-DATETIME          |               | ORD-MAX              | VARIANCE           |
-| PI          | FORMATTED-TIME              |               | ORD-MIN              |                    |
-| RANDOM      | INTEGER-OF-DATE             |               | REVERSE              |                    |
-| REM         | INTEGER-OF-DAY              |               | STORED-CHAR-LENGTH   |                    |
-| SIGN        | INTEGER-OF-FORMATTED-DATE   |               | SUBSTITUTE           |                    |
-| SIN         | LOCALE-DATE                 |               | SUBSTITUTE-CASE      |                    |
-| SQRT        | LOCALE-TIME                 |               | TRIM                 |                    |
-| TAN         | LOCALE-TIME-FROM-SECONDS    |               | UPPER-CASE           |                    |
-|             | SECONDS-FROM-FORMATTED-TIME |               |                      |                    |
-|             | SECONDS-PAST-MIDNIGHT       |               |                      |                    |
-|             | YEAR-TO-YYYY                |               |                      |                    |
+| Matemáticas             | Fecha y Hora                                                | Financieras                     | Manejo de Caracteres                      | Estadísticas                              |
+| ----------------------- | ----------------------------------------------------------- | ------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| [ABS](#abs)             | [COMBINED-DATETIME](#combined-datetime)                     | [ANNUITY](#annuity)             | [CHAR](#char)                             | [MAX](#max)                               |
+| [ACOS](#acos)           | [CURRENT-DATE](#current-date)                               | [PRESENT-VALUE](#present-value) | [CONCATENATE](#concatenate)               | [MEAN](#mean)                             |
+| [ASIN](#asin)           | [DATE-OF-INTEGER](#date-of-integer)                         |                                 | [DISPLAY-OF](#display-of)                 | [MEDIAN](#median)                         |
+| [ATAN](#atan)           | [DATE-TO-YYYYMMDD](#date-to-yyyy-mmdd)                      |                                 | [LENGTH](#length)                         | [MIDRANGE](#midrange)                     |
+| [COS](#cos)             | [DAY-OF-INTEGER](#day-of-integer)                           |                                 | LENGTH-AN                                 | [MIN](#min)                               |
+| [FACTORIAL](#factorial) | [DAY-TO-YYYYDDD](#day-to-yyyyddd)                           |                                 | [LOWER-CASE](#lower-case)                 | [RANGE](#range)                           |
+| [LOG](#log)             | [FORMATTED-CURRENT-DATE](#formatted-current-date)           |                                 | NATIONAL-OF                               | [STANDARD-DEVIATION](#standard-deviation) |
+| [LOG10](#log10)         | [FORMATTED-DATE](#formatted-date)                           |                                 | [ORD](#ord)                               | [SUM](#sum)                               |
+| [MOD](#mod)             | [FORMATTED-DATETIME](#formatted-datetime)                   |                                 | [ORD-MAX](#ord-max)                       | [VARIANCE](#variance)                     |
+| [PI](#pi)               | [FORMATTED-TIME](#formatted-time)                           |                                 | [ORD-MIN](#ord-min)                       |                                           |
+| [RANDOM](#random)       | [INTEGER-OF-DATE](#integer-of-date)                         |                                 | [REVERSE](#reverse)                       |                                           |
+| [REM](#rem)             | [INTEGER-OF-DAY](#integer-of-day)                           |                                 | [STORED-CHAR-LENGTH](#stored-char-length) |                                           |
+| [SIGN](#sign)           | [INTEGER-OF-FORMATTED-DATE](#integer-of-formatted-date)     |                                 | [SUBSTITUTE](#substitute)                 |                                           |
+| [SIN](#sin)             | [LOCALE-DATE](#locale-date)                                 |                                 | [SUBSTITUTE-CASE](#substitute-case)       |                                           |
+| [SQRT](#sqrt)           | [LOCALE-TIME](#locale-time)                                 |                                 | [TRIM](#trim)                             |                                           |
+| [TAN](#tan)             | [LOCALE-TIME-FROM-SECONDS](#locale-time-from-seconds)       |                                 | [UPPER-CASE](#upper-case)                 |                                           |
+|                         | [SECONDS-FROM-FORMATTED-TIME](#seconds-from-formatted-time) |                                 |                                           |                                           |
+|                         | [SECONDS-PAST-MIDNIGHT](#seconds-past-midnight)             |                                 |                                           |                                           |
+|                         | [YEAR-TO-YYYY](#year-to-yyyy)                               |                                 |                                           |                                           |
+
 
 
 Existen otras funciones intrínsecas que no se encuentran en la tabla, las cuales se categorizarían como funciones **Generales**, las que se pueden visualizar a continuación:
 
-| Generales          |              |                    |                |
-| ------------------ | --------------------- | --------------------------- | ----------------------- |
-| BOOLEAN-OF-INTEGER | MODULE-CALLER-ID      | NUMVAL                      | TEST-NUMVAL-C           |
-| INTEGER            | MODULE-DATE           | NUMVAL-C                    | TEST-NUMVAL-F           |
-| INTEGER-OF-BOOLEAN | MODULE-FORMATTED-DATE | NUMVAL-F                    | TEST-DAY-YYYYDDD        |
-| MODULE-ID          | MODULE-PATH           | NUMERIC-DECIMAL-POINT       | TEST-DATE-YYYYMMDD      |
-| MODULE-SOURCE      | MODULE-TIME           | NUMERIC-THOUSANDS-SEPARATOR | TEST-FORMATTED-DATETIME |
-| INTEGER-PART       | LOCALE-COMPARE        | STANDARD-COMPARE            | WHEN-COMPILED           |
-
-FALTA TEST-NUMVAL
+| Generales                             |                                                             |                                                     |                                 |
+| ------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- | ------------------------------- |
+| BOOLEAN-OF-INTEGER                    | [MODULE-FORMATTED-DATE](#module-formatted-date)             | [NUMVAL](#numval)                                   | [TEST-NUMVAL](#test-numval)     |
+| [INTEGER](#integer)                   | [MODULE-ID](#module-id)                                     | [NUMVAL-C](#numval-c)                               | [TEST-NUMVAL-C](#test-numval-c) |
+| INTEGER-OF-BOOLEAN                    | [MODULE-PATH](#module-path)                                 | [NUMVAL-F](#numval-f)                               | [TEST-NUMVAL-F](#test-numval-f) |
+| [INTEGER-PART](#integer-part)         | [MODULE-SOURCE](#module-source)                             | STANDARD-COMPARE                                    | [WHEN-COMPILED](#when-compiled) |
+| [LOCALE-COMPARE](#locale-compare)     | [MODULE-TIME](#module-time)                                 | [TEST-DATE-YYYYMMDD](#test-date-yyyymmdd)           |                                 |
+| [MODULE-CALLER-ID](#module-caller-id) | [NUMERIC-DECIMAL-POINT](#numeric-decimal-point)             | [TEST-DAY-YYYYDDD](#test-day-yyyyddd)               |                                 |
+| [MODULE-DATE](#module-date)           | [NUMERIC-THOUSANDS-SEPARATOR](#numeric-thousands-separator) | [TEST-FORMATTED-DATETIME](#test-formatted-datetime) |                                 |
 
 
 ## Funciones Matemáticas
@@ -936,10 +945,6 @@ Resultado:
 hola mundo!
 ```
 
-### NATIONAL-OF
-
-BORRARLA
-
 ### ORD
 
 La función `ORD` retorna el valor ASCII de un carácter.
@@ -1310,10 +1315,6 @@ DISPLAY FUNCTION VARIANCE(10, 7, 8, 2, 9).            *> 7.76
 
 ## Funciones Generales
 
-### BOOLEAN-OF-INTEGER
-
-BORRARLA
-
 ### INTEGER
 
 La función `INTEGER` retorna el valor entero de un número.
@@ -1330,10 +1331,6 @@ Resultado:
 ```
 5
 ```
-
-### INTEGER-OF-BOOLEAN
-
-BORRARLA
 
 ### INTEGER-PART
 
@@ -1516,10 +1513,6 @@ DISPLAY FUNCTION NUMERIC-THOUSANDS-SEPARATOR.
 ```
 
 Por defecto, el resultado es "", es decir, no hay separador de miles (Aunque se puede cambiar con la directiva `THOUSANDS-SEPARATOR IS COMMA` o `THOUSANDS-SEPARATOR IS DOT`), lo que podemos ver cuando se imprime un número
-
-### STANDARD-COMPARE
-
-BORRAR
 
 ### Funciones TEST
 
@@ -1741,3 +1734,13 @@ DISPLAY FUNCTION TEST-FORMATTED-DATETIME(
 ).                                                            *> 000000003
 DISPLAY FUNCTION WHEN-COMPILED.                               *> Fecha y hora de compilación
 ```
+
+<br>
+
+### Datos del Cheat Sheet
+
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 13/02/2024 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Cobol, OpenCobolIde 4.7.6
