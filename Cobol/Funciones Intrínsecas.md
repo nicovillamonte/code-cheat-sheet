@@ -1085,6 +1085,7 @@ Hola mundo!
 La función `UPPER-CASE` retorna la cadena en mayúsculas.
 
 Argumentos:
+- Cadena.
 
 ```cobol
 DISPLAY FUNCTION UPPER-CASE("Hola mundo!").
@@ -1099,3 +1100,210 @@ HOLA MUNDO!
 ### Resumen de Funciones de Manejo de Caracteres
 
 ```cobol
+DISPLAY FUNCTION CHAR(66).                                                  *> A
+DISPLAY FUNCTION CONCATENATE("Hola"," ","mundo","!"," Como estas?").        *> Hola mundo! Como estas?
+DISPLAY FUNCTION LENGTH("Hola mundo!").                                     *> 11
+DISPLAY FUNCTION LOWER-CASE("Hola mundo!"). *> hola mundo!
+DISPLAY FUNCTION ORD("A").                                                  *> 66
+DISPLAY FUNCTION ORD-MAX("H","Z","A").                                      *> 2
+DISPLAY FUNCTION ORD-MIN("H","Z","A").                                      *> 3
+DISPLAY FUNCTION REVERSE("Hola mundo!").                                    *> !odnum aloH
+DISPLAY FUNCTION STORED-CHAR-LENGTH("Hola mundo!").                         *> 11
+DISPLAY FUNCTION SUBSTITUTE("Hola mundo!","o","0").                         *> H0la mund0!
+DISPLAY FUNCTION SUBSTITUTE-CASE("Mi gatita Mimi esta mauyando.","m","l").  *> li gatita lili esta lauyando.
+DISPLAY FUNCTION TRIM("    Hola mundo!    ").                               *> Hola mundo!
+DISPLAY FUNCTION UPPER-CASE("Hola mundo!").                                 *> HOLA MUNDO!
+```
+
+## Funciones Estadísticas
+
+### MAX
+
+La función `MAX` retorna el valor máximo de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION MAX(1, 2, 6, 4, 5).
+```
+
+Resultado:
+
+```
+6
+```
+
+### MEAN
+
+La función `MEAN` retorna el promedio de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION MEAN(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+7.2
+```
+
+### MEDIAN
+
+La función `MEDIAN` retorna la mediana de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION MEDIAN(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+8
+```
+
+### MIDRANGE
+
+La función `MIDRANGE` retorna el promedio del valor máximo y el valor mínimo de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION MIDRANGE(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+6
+```
+
+### MIN
+
+La función `MIN` retorna el valor mínimo de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION MIN(1, 2, 6, 4, 5).
+```
+
+Resultado:
+
+```
+1
+```
+
+### RANGE
+
+La función `RANGE` retorna la diferencia entre el valor máximo y el valor mínimo de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION RANGE(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+8
+```
+
+### STANDARD-DEVIATION
+
+La función `STANDARD-DEVIATION` retorna la desviación estándar de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION STANDARD-DEVIATION(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+2.78567765543682386...
+```
+
+### SUM
+
+La función `SUM` retorna la suma de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION SUM(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+36
+```
+
+### VARIANCE
+
+La función `VARIANCE` retorna la varianza de una lista de números.
+
+Argumentos:
+- Número 1.
+- Número 2.
+- _Opcional_: Número 3, Número 4, ..., Número n.
+
+```cobol
+DISPLAY FUNCTION VARIANCE(10, 7, 8, 2, 9).
+```
+
+Resultado:
+
+```
+7.76
+```
+
+### Resumen de Funciones Estadísticas
+
+```cobol
+DISPLAY FUNCTION MAX(1, 2, 6, 4, 5).                  *> 6
+DISPLAY FUNCTION MEAN(10, 7, 8, 2, 9).                *> 7.2
+DISPLAY FUNCTION MEDIAN(10, 7, 8, 2, 9).              *> 8
+DISPLAY FUNCTION MIDRANGE(10, 7, 8, 2, 9).            *> 6
+DISPLAY FUNCTION MIN(1, 2, 6, 4, 5).                  *> 1
+DISPLAY FUNCTION RANGE(10, 7, 8, 2, 9).               *> 8
+DISPLAY FUNCTION STANDARD-DEVIATION(10, 7, 8, 2, 9).  *> 2.78567765543682386...
+DISPLAY FUNCTION SUM(10, 7, 8, 2, 9).                 *> 36
+DISPLAY FUNCTION VARIANCE(10, 7, 8, 2, 9).            *> 7.76
+```
+
+## Funciones Generales
+
+### BOOLEAN-OF-INTEGER
+
+...
