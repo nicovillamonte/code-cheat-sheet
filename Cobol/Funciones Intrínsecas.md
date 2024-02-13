@@ -14,6 +14,12 @@ FUNCTION function-name (argument-1, argument-2, ..., argument-n)
 
 Donde `function-name` es el nombre de la función intrínseca que se desea utilizar y `argument-1, argument-2, ..., argument-n` son los argumentos que recibe la función.
 
+No es necesario utilizar las comas como separadores de argumentos, también se pueden utilizar espacios en blanco. En este Cheat Sheet, todas las funciones intrínsecas se utilizarán con comas como separadores de argumentos para mayor legibilida.
+
+```cobol
+DISPLAY FUNCTION function-name(argument-1 argument-2 ... argument-n).
+```
+
 Podemos utilizar las funciones intrínsecas en cualquier parte de nuestro código, la cual será reemplazada por el valor que retorne la función.
 
 ```cobol
@@ -60,7 +66,7 @@ A continuación, se detallará una tabla de todas las funciones intrínsecas de 
 
 Existen otras funciones intrínsecas que no se encuentran en la tabla, las cuales se categorizarían como funciones **Generales**, las que se pueden visualizar a continuación:
 
-| Generales          | Generales             | Generales                   | Generales               |
+| Generales          |              |                    |                |
 | ------------------ | --------------------- | --------------------------- | ----------------------- |
 | BOOLEAN-OF-INTEGER | MODULE-CALLER-ID      | NUMVAL                      | TEST-NUMVAL-C           |
 | INTEGER            | MODULE-DATE           | NUMVAL-C                    | TEST-NUMVAL-F           |
@@ -1306,4 +1312,432 @@ DISPLAY FUNCTION VARIANCE(10, 7, 8, 2, 9).            *> 7.76
 
 ### BOOLEAN-OF-INTEGER
 
-...
+BORRARLA
+
+### INTEGER
+
+La función `INTEGER` retorna el valor entero de un número.
+
+Argumentos:
+- Número.
+
+```cobol
+DISPLAY FUNCTION INTEGER(5.6).
+```
+
+Resultado:
+
+```
+5
+```
+
+### INTEGER-OF-BOOLEAN
+
+BORRARLA
+
+### INTEGER-PART
+
+Es un sinónimo de `INTEGER`, retorna el valor entero de un número.
+
+Argumentos:
+- Número.
+
+```cobol
+DISPLAY FUNCTION INTEGER-PART(5.6).
+```
+
+Resultado:
+
+```
+5
+```
+
+### MODULE-ID
+
+Esta función retorna el identificador del módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-ID.
+```
+
+### MODULE-SOURCE
+
+Esta función retorna el nombre del archivo fuente del módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-SOURCE.
+```
+
+
+
+### MODULE-CALLER-ID
+
+Esta función retorna el identificador del módulo que invocó al módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-CALLER-ID.
+```
+
+### MODULE-DATE
+
+Esta función retorna la fecha de compilación del módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-DATE.
+```
+
+### MODULE-FORMATTED-DATE
+
+Esta función retorna la fecha de compilación del módulo actual formateada.
+
+
+```cobol
+DISPLAY FUNCTION MODULE-FORMATTED-DATE.
+```
+
+Resultado:
+
+```
+feb. 13 2024 01:10:59
+```
+
+### MODULE-PATH
+
+Esta función retorna la ruta del archivo fuente del módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-PATH.
+```
+
+### MODULE-TIME
+
+Esta función retorna la hora de compilación del módulo actual.
+
+```cobol
+DISPLAY FUNCTION MODULE-TIME.
+```
+
+### LOCALE-COMPARE
+
+La función `LOCALE-COMPARE` compara dos valores de cualquier tipo y retorna un caracter que indica si el primer valor es menor, igual o mayor que el segundo.
+
+Argumentos:
+- Valor 1.
+- Valor 2.
+
+```cobol
+DISPLAY FUNCTION LOCALE-COMPARE(5,5).
+DISPLAY FUNCTION LOCALE-COMPARE("Hola","hola").
+DISPLAY FUNCTION LOCALE-COMPARE("a","t").
+```
+
+Resultado:
+
+```
+=
+>
+<
+```
+
+### NUMVAL
+
+La función `NUMVAL` retorna el valor numérico de una cadena.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION NUMVAL("746").
+```
+
+Resultado:
+
+```
+000000746
+```
+
+### NUMVAL-C
+
+La función `NUMVAL-C` retorna el valor numérico de una cadena, ignorando los valores de moneda, si los hay, y cualquier separador de agrupación (comas o puntos) para producir un valor numérico.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION NUMVAL-C("$746,454").
+```
+
+Resultado:
+
+```
+000746454
+```
+
+> Recordar que la coma es un separador de miles por defecto en Cobol, como el punto en español.
+
+
+### NUMVAL-F
+
+La función `NUMVAL-F` retorna el valor numérico de una cadena, la misma esta hecha especialmente para manejar valores expresados en notación científica. Lo que en COBOL se realiza con la letra E.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION NUMVAL-F("74645E+03").
+```
+
+Resultado:
+
+```
+074645000
+```
+
+### NUMERIC-DECIMAL-POINT
+
+La función `NUMERIC-DECIMAL-POINT` retorna el carácter que se utiliza como separador decimal.
+
+```cobol
+DISPLAY FUNCTION NUMERIC-DECIMAL-POINT.
+```
+
+Por defecto, el resultado es el punto `.` (Aunque se puede cambiar con la directiva `DECIMAL-POINT IS COMMA`).
+
+```
+.
+```
+
+### NUMERIC-THOUSANDS-SEPARATOR
+
+La función `NUMERIC-THOUSANDS-SEPARATOR` retorna el carácter que se utiliza como separador de miles.
+
+```cobol
+DISPLAY FUNCTION NUMERIC-THOUSANDS-SEPARATOR.
+```
+
+Por defecto, el resultado es "", es decir, no hay separador de miles (Aunque se puede cambiar con la directiva `THOUSANDS-SEPARATOR IS COMMA` o `THOUSANDS-SEPARATOR IS DOT`), lo que podemos ver cuando se imprime un número
+
+### STANDARD-COMPARE
+
+BORRAR
+
+### Funciones TEST
+
+Las funciones que comienzan con `TEST-` seguido del nombre de otra función intrínseca, son funciones que retornan un valor que indica si el valor que se le pasó como argumento es válido para la función.
+
+Si el valor es válido, retorna el número 0, sino, retorna el valor de la posición en la que se encontró el error.
+
+#### TEST-NUMVAL
+
+La función `TEST-NUMVAL` retorna un valor numérico que indica si el valor que se le pasó como argumento es válido para la función [`NUMVAL`](#numval).
+
+Si el valor es válido, retorna el número 0, sino, retorna el valor de la posición en la que se encontró el error.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION TEST-NUMVAL("746").
+DISPLAY FUNCTION TEST-NUMVAL("34.3E+03").
+DISPLAY FUNCTION TEST-NUMVAL(" ").
+```
+
+Resultado:
+
+```
+000000000
+000000005
+000000002
+
+```
+
+- El primer valor da 0, ya que el parametro dado es válido para la función `NUMVAL`
+- El segundo valor da 5, ya que se encontró un error en la posición 5, que es la "E", ya que no se puede usar la notación científica en la función `NUMVAL`, solo en `NUMVAL-F`.
+- El tercer valor da 2, lo que es el LENGTH de la cadena más 1 (`LENGTH(" ") + 1`). Esta condición se da cuando:
+  - El argumento tiene longitud cero.
+  - El argumento solo contiene espacios.  <-- Este es el caso de este ejemplo.
+  - El argumento contiene caracteres validos pero esta incompleto.
+
+#### TEST-NUMVAL-C
+
+La función `TEST-NUMVAL-C` retorna un valor numérico que indica si el valor que se le pasó como argumento es válido para la función [`NUMVAL-C`](#numval-c).
+
+Si el valor es válido, retorna el número 0, sino, retorna el valor de la posición en la que se encontró el error.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION TEST-NUMVAL-C("$746,454").
+DISPLAY FUNCTION TEST-NUMVAL-C("34.3E+03").
+DISPLAY FUNCTION TEST-NUMVAL-C(" ").
+```
+
+Resultado:
+
+```
+000000000
+000000005
+000000002
+```
+
+Esto funciona de la misma manera que [`TEST-NUMVAL`](#test-numval), pero para los valores que se le pasarían a `NUMVAL-C`.
+
+#### TEST-NUMVAL-F
+
+La función `TEST-NUMVAL-F` retorna un valor numérico que indica si el valor que se le pasó como argumento es válido para la función [`NUMVAL-F`](#numval-f).
+
+Si el valor es válido, retorna el número 0, sino, retorna el valor de la posición en la que se encontró el error.
+
+Argumentos:
+- Cadena.
+
+```cobol
+DISPLAY FUNCTION TEST-NUMVAL-F("34.3E+03").
+DISPLAY FUNCTION TEST-NUMVAL-F("$3434").
+DISPLAY FUNCTION TEST-NUMVAL-F("   ").
+```
+
+Resultado:
+
+```
+000000000
+000000001
+000000004
+```
+
+Esto funciona de la misma manera que [`TEST-NUMVAL`](#test-numval), pero para los valores que se le pasarían a `NUMVAL-F`.
+
+#### TEST-DAY-YYYYDDD
+
+La función `TEST-DAY-YYYYDDD` retorna un valor numérico que indica si la fecha en formato Juliano que se le pasó como argumento es una fecha válida en el calendario gregoriano.
+
+Argumentos:
+- Fecha en formato `YYYYDDD`.
+
+```cobol
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(2024110).
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(1200187).
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(2023366).
+```
+
+Resultado:
+
+```
+000000000
+000000001
+000000002
+```
+
+- El primer valor da 0, ya que el parametro dado es válido para la función `DAY-YYYYDDD`
+- El segundo valor da 1, ya que se encontró un error en el año, ya que el valor es menor a 1601 o mayor a 9999.
+- El tercer valor da 2, ya el día no es válido en el año dado. Si fuera un año bisiesto, el valor máximo sería 366, sino, 365.
+
+#### TEST-DATE-YYYYMMDD
+
+La función `TEST-DATE-YYYYMMDD` retorna un valor numérico que indica si la fecha en formato `YYYYMMDD` que se le pasó como argumento es una fecha válida en el calendario gregoriano.
+
+Argumentos:
+- Fecha en formato `YYYYMMDD`.
+
+```cobol
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20240419).
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(12000604).
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20241323).
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20240454).
+```
+
+Resultado:
+
+```
+000000000
+000000001
+000000002
+000000003
+```
+
+- El primer valor da 0, ya que el parametro dado es válido para la función `DATE-YYYYMMDD`
+- El segundo valor da 1, ya que se encontró un error en el año, ya que el valor es menor a 1601 o mayor a 9999.
+- El tercer valor da 2, ya el mes no es válido en el año dado.
+- El cuarto valor da 3, ya el día no es válido en el año y mes dado.
+
+#### TEST-FORMATTED-DATETIME
+
+La función `TEST-FORMATTED-DATETIME` retorna un valor numérico que indica si la fecha y hora en formato específico que se le pasó como argumento es una fecha y hora válida en el calendario gregoriano.
+
+Argumentos:
+- Formato de la fecha y hora. [Ver formatos](https://www.ibm.com/docs/en/cobol-zos/6.4?topic=sf-format-arguments-return-values-date-time-intrinsic-functions#INFFORM__date_and_time_format).
+- Fecha y hora en el formato especificado.
+
+```cobol
+DISPLAY FUNCTION TEST-FORMATTED-DATETIME(
+  "YYYY-MM-DDThh:mm:ss",
+  "2024-04-19T05:14:27"
+).
+
+DISPLAY FUNCTION TEST-FORMATTED-DATETIME(
+  "YYYY-MM-DDThh:mm:ss",
+  "24-04-19T25:14:27"
+).
+```
+
+Resultado:
+
+```
+000000000
+000000003
+```
+
+Si el valor es válido, retorna el número 0.
+Si el valor no es válido, retorna el número de la posición en la que se encontró el error en la cadena.
+
+
+### WHEN-COMPILED
+
+La función `WHEN-COMPILED` retorna la fecha y hora de compilación del módulo actual.
+
+```cobol
+DISPLAY FUNCTION WHEN-COMPILED.
+```
+
+### Resumen de Funciones Generales
+
+```cobol
+DISPLAY FUNCTION INTEGER(5.6).                               *> 5
+DISPLAY FUNCTION INTEGER-PART(5.6).                          *> 5
+DISPLAY FUNCTION MODULE-ID.                                   *> Nombre del módulo
+DISPLAY FUNCTION MODULE-SOURCE.                               *> Nombre del archivo fuente
+DISPLAY FUNCTION MODULE-CALLER-ID.                            *> Nombre del módulo que lo invocó
+DISPLAY FUNCTION MODULE-DATE.                                 *> Fecha de compilación
+DISPLAY FUNCTION MODULE-FORMATTED-DATE.                       *> Fecha de compilación formateada
+DISPLAY FUNCTION MODULE-PATH.                                 *> Ruta del archivo fuente
+DISPLAY FUNCTION MODULE-TIME.                                 *> Hora de compilación
+DISPLAY FUNCTION LOCALE-COMPARE(5,5).                         *> =
+DISPLAY FUNCTION LOCALE-COMPARE("Hola","hola").               *> >
+DISPLAY FUNCTION LOCALE-COMPARE("a","t").                     *> <
+DISPLAY FUNCTION NUMVAL("746").                               *> 000000746
+DISPLAY FUNCTION NUMVAL-C("$746,454").                        *> 000746454
+DISPLAY FUNCTION NUMVAL-F("74645E+03").                       *> 074645000
+DISPLAY FUNCTION NUMERIC-DECIMAL-POINT.                       *> .
+DISPLAY FUNCTION NUMERIC-THOUSANDS-SEPARATOR.                *> ""
+DISPLAY FUNCTION STANDARD-COMPARE("Hola","hola").             *> >
+DISPLAY FUNCTION TEST-NUMVAL("746").                          *> 000000000
+DISPLAY FUNCTION TEST-NUMVAL-C("$746,454").                   *> 000000000
+DISPLAY FUNCTION TEST-NUMVAL-F("74645E+03").                  *> 000000000
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(2024110).                   *> 000000000
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(1200187).                   *> 000000001
+DISPLAY FUNCTION TEST-DAY-YYYYDDD(2023366).                   *> 000000002
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20240419).                *> 000000000
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(12000604).                *> 000000001
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20241323).                *> 000000002
+DISPLAY FUNCTION TEST-DATE-YYYYMMDD(20240454).                *> 000000003
+DISPLAY FUNCTION TEST-FORMATTED-DATETIME(
+  "YYYY-MM-DDThh:mm:ss",
+  "2024-04-19T05:14:27"
+).                                                            *> 000000000
+DISPLAY FUNCTION TEST-FORMATTED-DATETIME(
+  "YYYY-MM-DDThh:mm:ss",
+  "24-04-19T25:14:27"
+).                                                            *> 000000003
+DISPLAY FUNCTION WHEN-COMPILED.                               *> Fecha y hora de compilación
+```
