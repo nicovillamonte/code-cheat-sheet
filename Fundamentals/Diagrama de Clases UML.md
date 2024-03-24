@@ -35,7 +35,7 @@ Los **diagramas de clases** son un tipo de diagrama de estructura que se utiliza
 
 Una **clase** es representada por un rectángulo dividido en tres secciones horizontales.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-classUML.svg" />
 </div>
 
@@ -49,7 +49,7 @@ El nombre de la clase se escribe en la primera sección del rectángulo, de form
 
 Si la clase es abstracta, se coloca en cursiva.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-abstractClassUML.svg" />
 </div>
 
@@ -92,7 +92,7 @@ Los modificadores pueden ser:
 - **`const`** para atributos constantes.
 - ...
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-attributeExample.svg" />
 </div>
 
@@ -112,7 +112,7 @@ Los **parámetros** se escriben entre paréntesis separados por comas. Cada par�
 
 El **tipo de retorno** se escribe en mayúsculas y con CamelCase. Si el método no retorna ningún valor, se coloca `void` o no se coloca nada.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-methodExample.svg" />
 </div>
 
@@ -132,13 +132,13 @@ La **dependencia** es una relación que indica que una clase depende de otra cla
 
 Se representa con una flecha punteada que va desde la clase que depende hacia la clase de la que depende.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-dottedArrow.svg" />
 </div>
 
 Un ejemplo de dependencia es cuando una clase utiliza un objeto de otra clase como parámetro en un método y/o realiza operaciones sobre él o con él.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-dependencyExample.svg" />
 </div>
 
@@ -148,13 +148,13 @@ La **generalización** o **herencia** es una relación que indica que una clase 
 
 Se representa con una flecha sólida sin relleno que va desde la clase hijo hacia la clase padre.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-inheranceArrow.svg" />
 </div>
 
 Un ejemplo de herencia es cuando una clase `Vehiculo` es la clase base y las clases `Automovil`, `Motocicleta`, `Bicicleta`, etc. son clases hijas que heredan los atributos y métodos de la clase `Vehiculo`.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-generalizationExample.svg" />
 </div>
 
@@ -182,7 +182,7 @@ Un ejemplo de asociación unidireccional es cuando una clase `Persona` tiene una
 
 La asociación unidireccional se representa con una línea sólida con punta abierta que va desde la clase que interactúa hacia la clase con la que interactúa.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-unidirectionalAssociation.svg" />
 </div>
 
@@ -196,7 +196,7 @@ En este caso, vamos a tener una clase `Estudiante` y una clase `Curso`. Un estud
 
 La asociación bidireccional se representa con una línea sólida con punta abierta en ambos extremos que va desde una clase hacia la otra clase.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-bidirectionalAssociation.svg" />
 </div>
 
@@ -208,7 +208,7 @@ En general, no se suele ver mucho en los diagramas de clase, ya que depende de c
 
 Un ejemplo muy común de autoasociación es cuando un usuario puede tener de amigos a otros usuarios en un sistema. 
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-autoAssociation.svg" />
 </div>
 
@@ -234,7 +234,7 @@ Un ejemplo de agregación es cuando tenemos una clase `Equipo` y una clase `Juga
 
 La agregación se representa con una flecha de diamante sin relleno que va desde la clase que forma parte hacia la clase que contiene.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-agregation.svg" />
 </div>
 
@@ -248,7 +248,7 @@ Un ejemplo de composición es cuando tenemos una clase `Casa` y una clase `Habit
 
 La composición se representa con una flecha de diamante relleno que va desde la clase que forma parte hacia la clase que contiene.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-composition.svg" />
 </div>
 
@@ -263,7 +263,7 @@ Se representa con una flecha punteada que va desde la clase que implementa hacia
 
 Un ejemplo de realización es cuando las clases `Estudiante` y `Docente` implementan la interfaz `Persona`, ya que ambos son personas. La interfaz `Persona` define algunas propiedades y métodos que deben ser implementados por dichas clases.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-implementation.svg" />
 </div>
 
@@ -278,7 +278,7 @@ Los enumeradores son un tipo de clase especial que se utiliza para representar u
 - No es necesario que muestren tipos de atributos, ya que todos los atributos son del tipo del enumerador mismo.
 - Tampoco necesitan mostrar modificadores de acceso, ya que se supone que todos los atributos son accesibles si el enumerador en sí es accesible.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-enum.svg" />
 </div>
 
@@ -287,13 +287,13 @@ Los enumeradores son un tipo de clase especial que se utiliza para representar u
 
 Las **notas** son un tipo de comentario que se utiliza para proporcionar información adicional sobre una clase o una relación. Se representan con un rectángulo con una esquina doblada que se conecta con una línea punteada a la clase o relación a la que se refiere. Puede no estar conectado a nada si es una nota general.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-noteExample.svg" />
 </div>
 
 Las notas conectadas a una clase se verían de la siguiente manera:
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-noteConnectedExample.svg" />
 </div>
 
@@ -304,7 +304,7 @@ Los **atributos derivados** son atributos que se calculan a partir de otros atri
 
 Siguiente el ejemplo anterior de la Persona, si se tiene un atributo `fechaNacimiento` y se quiere calcular la edad de la persona, se puede agregar un atributo `edad` que se calcula a partir de la fecha de nacimiento.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-derivatedAttribute.svg" />
 </div>
 
@@ -314,7 +314,7 @@ Las **palabras clave** son metadatos adicionales de una entidad. Ya las hemos es
 
 Estas palabras clave se colocan en la primera sección del rectángulo y se escriben en cursiva sin negrita.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-keywords.svg" />
 </div>
 
@@ -322,13 +322,13 @@ Estas palabras clave se colocan en la primera sección del rectángulo y se escr
 
 El **constructor** es un método especial que se utiliza para inicializar una clase. Se representa con el nombre `<<constructor>>` en cursiva en la tercera sección del rectángulo.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-constructor1.svg" />
 </div>
 
 Otra manera de representar un constructor es directamente con el nombre de la clase como si fuera un método, pero sin el tipo de retorno.
 
-<div style="width:100%; display:flex;">
+<div align="center">
     <img style="padding: 10px; background-color:white; margin: 10px auto;" src="../assets/fundamentals-classDiagram-constructor2.svg" />
 </div>
 
