@@ -113,3 +113,11 @@ Puedes personalizar la salida del comando `git diff` utilizando la opción `--pr
 ```bash
 git diff --pretty=format:"%h - %an: %s" <hash_del_commit1> <hash_del_commit2>
 ```
+
+### Mostrar diferencias sin paginación
+
+Para mostrar las diferencias sin utilizar un paginador (como `less`), puedes usar la opción `--no-pager`. Esto es útil cuando deseas ver todas las diferencias directamente en la terminal sin necesidad de desplazarte.
+
+```bash
+git diff --no-pager
+```
