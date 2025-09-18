@@ -2,7 +2,15 @@
 
 > IMPORTANTE: Leer todo el artículo antes de implementar cualquier código, algunos ejemplos estan mal hechos a propósito para explicar un concepto. Si se quiere implementar el código correctamente, seguir el [ejemplo final](#ejemplo-final).
 
+1. [Introducción](#introducción)
+2. [Componente personalizado](#componente-personalizado)
+   - [Obtener props adicionales](#obtener-props-adicionales)
+   - [Tipado correcto de las props](#tipado-correcto-de-las-props)
+     - [Tipado de `children`](#tipado-de-children)
+     - [Tipado de `rest`](#tipado-de-rest)
+   - [Ejemplo final](#ejemplo-final)
 
+- [Datos del Cheat Sheet](#datos-del-cheat-sheet)
 
 ## Introducción
 
@@ -134,3 +142,13 @@ Finalmente, el componente `MiBoton.svelte` quedaría de la siguiente manera:
   {@render children()}
 </button>
 ```
+
+<br>
+
+### Datos del Cheat Sheet
+
+\- Autor: Nicolás Villamonte <br>
+\- Fecha: 17/09/2025 <br>
+\- Email: nicovillamonte@gmail.com <br>
+\- Linkedin: https://www.linkedin.com/in/nicolasvillamonte/ <br>
+\- Herramientas y Versiones: Svelte 5, Nodejs v22.14.0, Typescript 5.0.0
