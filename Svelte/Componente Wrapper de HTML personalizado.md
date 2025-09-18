@@ -44,7 +44,7 @@ No queremos tener que definir cada uno de estos atributos manualmente, ya que es
 
 ```svelte
 <script lang="ts">
-  const { tipo, children, ...rest } = $props();
+  const { tipo = "primario", children, ...rest } = $props();
 </script>
 
 <button class={`btn-${tipo}`} onclick={onclick} {...rest}>
@@ -65,7 +65,7 @@ Vamos a definir una interfaz para tipar correctamente las props del componente:
     children: ...; // Cómo tipar children?
   }
 
-  const { tipo, children, ...rest }: Props = $props(); // Y cómo tipar rest?
+  const { tipo = "primario", children, ...rest }: Props = $props(); // Y cómo tipar rest?
 </script>
 
 <button class={`btn-${tipo}`} {...rest}>
@@ -102,7 +102,7 @@ interface Props {
   children: Snippet;
 }
 
-const { tipo, children, ...rest }: Props & HTMLButtonAttributes = $props();
+const { tipo = "primario", children, ...rest }: Props & HTMLButtonAttributes = $props();
 ```
 
 Una manera mas elegante de realizarlo es extendiendo la interfaz `Props` con los atributos HTML del elemento que queremos envolver:
@@ -116,7 +116,7 @@ interface Props extends HTMLButtonAttributes {
   children: Snippet;
 }
 
-const { tipo, children, ...rest }: Props = $props();
+const { tipo = "primario", children, ...rest }: Props = $props();
 ```
 
 De esta manera, `rest` tendrá el tipado correcto de todos los atributos HTML que se le pueden pasar a un botón, y `children` estará correctamente tipado como un `Snippet`.
@@ -135,7 +135,7 @@ Finalmente, el componente `MiBoton.svelte` quedaría de la siguiente manera:
     children: Snippet;
   }
 
-  const { tipo, children, ...rest }: Props = $props();
+  const { tipo = "primario", children, ...rest }: Props = $props();
 </script>
 
 <button class={`btn-${tipo}`} {...rest}>
