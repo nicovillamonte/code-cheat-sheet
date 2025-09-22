@@ -25,13 +25,13 @@ Define cuánto puede crecer un elemento en relación a sus hermanos dentro del c
 }
 ```
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./assets/flex-grow1.gif" alt="flex-grow-1">
 </div>
 
 Esto aplica para todos los items al mismo tiempo porque cada uno de ellos tiene la misma clase `.box` y por ende el mismo `flex-grow`. Pero si uno tiene `flex-grow: 2` y los demás `flex-grow: 1`, el primero crecerá el doble que los otros.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./assets/flex-grow2.png" alt="flex-grow-2">
 </div>
 
@@ -50,13 +50,13 @@ Define la capacidad de un elemento para "encogerse" si no hay suficiente espacio
 
 Si todos los elementos tienen `flex-shrink: 1`, se encogerán proporcionalmente cuando el espacio sea limitado.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./assets/flex-shrink1-0.gif" alt="flex-shrink-1">
 </div>
 
 Al igual que con `flex-grow`, si uno tiene `flex-shrink: 2` y los demás `flex-shrink: 1`, el primero se encogerá el doble que los otros.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./assets/flex-shrink2.gif" alt="flex-shrink-2">
 </div>
 
@@ -108,7 +108,7 @@ Este último ejemplo es el combo más común utilizado, por lo que existe un ata
 
 Al poner `flex-basis: 0`, le decís al navegador: "Ignora el tamaño del contenido de estos elementos. Trátalos a todos como si empezaran midiendo cero". Luego, con `flex-grow: 1`, el espacio total disponible se reparte de forma perfectamente equitativa entre todos ellos. Y con `flex-shrink: 1`, si el contenedor se hace más pequeño, todos los elementos se encogerán proporcionalmente.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./assets/flex-1.gif" alt="flex-1">
 </div>
 
