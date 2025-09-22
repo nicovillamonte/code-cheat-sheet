@@ -13,7 +13,9 @@
 
 ## CSS
 
-```cs
+```css
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 body {
   background-color: #05070B;
   margin: 0;
@@ -22,6 +24,11 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 0 2rem;
+
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 * {
