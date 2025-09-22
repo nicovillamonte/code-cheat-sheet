@@ -95,6 +95,7 @@ Por ejemplo:
 .box {
   flex: 1 1 0; /* Crece y se encoge según sea necesario, comenzando desde 0 */
 }
+```
 
 Este último ejemplo es el combo más común utilizado, por lo que existe un atajo aún más corto para hacer lo mismo y que es muy utilizado:
 
